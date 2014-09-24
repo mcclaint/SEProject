@@ -11,9 +11,7 @@ namespace WoodWorking
     {
         public static List<Species> SpeciesList;
         public static Form1 startForm;
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+
         [STAThread]
         static void Main()
         {
