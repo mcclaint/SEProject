@@ -153,17 +153,17 @@ namespace WoodWorking
             using (var writer = new StreamWriter("./data.txt"))
             {
                 speciesList = speciesList.OrderBy(s => s.Name).ToList();
-                //speciesList.ForEach(s =>
-                //    writer.WriteLine(
-                //        s.Name + "|" +
-                //        s.HeartwoodMoisture + "|" +
-                //        s.SapwoodMoisture + "|" +
-                //        s.RadialShrinkage + "|" +
-                //        s.TangentialShrinkage + "|" +
-                //        s.VolumetricShrinkage + "|" +
-                //        s.NativeLocation
-                //    )
-                //);
+                speciesList.ForEach(s =>
+                    writer.WriteLine(
+                        s.Name + "|" +
+                        s.HeartwoodMoisture + "|" +
+                        s.SapwoodMoisture + "|" +
+                        s.RadialShrinkage + "|" +
+                        s.TangentialShrinkage + "|" +
+                        s.VolumetricShrinkage + "|" +
+                        s.NativeLocation
+                    )
+                );
             }
 
             return speciesList.OrderBy(s => s.Name).ToList();
