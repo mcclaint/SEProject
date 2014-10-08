@@ -34,7 +34,6 @@ namespace WoodWorking
             {
                 Species = null;
                 SpeciesBox.Text = "New Species";
-
                 EnableEdits();
             }
             
@@ -118,6 +117,9 @@ namespace WoodWorking
 
         private void ViewCalculations(object sender, EventArgs e)
         {
+            if (Species == null)
+                return;
+
             var calcWindow = new CalculationsForm(Species);
             calcWindow.ShowDialog();
         }
