@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WoodWorking
@@ -19,9 +12,40 @@ namespace WoodWorking
             InitializeComponent();
         }
 
-        public double CalculateDimensionalChange(double length)
+        public double CalculateTangDimensionalChange(double length, double initMoisture, double alteredMoisture)
         {
-            return 2;
+            return length*(Species.TangentialChangeCoefficient*(alteredMoisture - initMoisture));
+        }
+
+        public double CalculateRadialDimensionalChange(double length, double initMoisture, double alteredMoisture)
+        {
+            return length * (Species.RadialChangeCoefficient * (alteredMoisture - initMoisture));
+        }
+
+        private void DoCalculations(object sender, System.EventArgs e)
+        {
+            try
+            {
+                textBox4.Text =
+                    CalculateRadialDimensionalChange(double.Parse(textBox3.Text), double.Parse(textBox1.Text),
+                        double.Parse(textBox2.Text)).ToString();
+            }
+            catch (Exception)
+            {
+                textBox4.Text = "";
+            }
+
+            try
+            {
+                textBox5.Text =
+                    CalculateTangDimensionalChange(double.Parse(textBox3.Text), double.Parse(textBox1.Text),
+                        double.Parse(textBox2.Text)).ToString();
+            }
+            catch (Exception)
+            {
+                textBox5.Text = "";
+            }
+
         }
     }
 }
