@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculationsForm.Designer.cs">
+      <DependentUpon>CalculationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="VerifyDelete.Designer.cs">
       <DependentUpon>VerifyDelete.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CalculationsForm.resx">
+      <DependentUpon>CalculationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailsForm.resx">
       <DependentUpon>DetailsForm.cs</DependentUpon>
     </EmbeddedResource>

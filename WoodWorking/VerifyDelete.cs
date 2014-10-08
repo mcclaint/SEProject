@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WoodWorking
@@ -31,7 +25,7 @@ namespace WoodWorking
             {
                 Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
                 Program.WriteSpecies();
-                Program.startForm.RefreshSpecies();
+                Program.StartForm.RefreshSpecies();
             }
             this.Close();
         }

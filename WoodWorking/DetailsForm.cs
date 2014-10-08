@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WoodWorking
@@ -13,7 +7,7 @@ namespace WoodWorking
     public partial class DetailsForm : Form
     {
         public Species Species;
-        public Species editedSpecies;
+        public Species EditedSpecies;
 
         public DetailsForm(Species species)
         {
@@ -29,6 +23,8 @@ namespace WoodWorking
                 textBox3.Text = Species.RadialShrinkage.ToString();
                 textBox4.Text = Species.TangentialShrinkage.ToString();
                 textBox5.Text = Species.VolumetricShrinkage.ToString();
+                RadialChangeBox.Text = Species.RadialChangeCoefficient.ToString();
+                TangentialChangeBox.Text = Species.TangentialChangeCoefficient.ToString();
                 comboBox1.SelectedItem = Enum.Parse(typeof(NativeLocation), Species.NativeLocation.ToString());
 
                 SaveButton.Visible = false;
@@ -51,7 +47,7 @@ namespace WoodWorking
 
         private void SaveSpecies(object sender, EventArgs e)
         {
-            editedSpecies = new Species
+            EditedSpecies = new Species
             {
                 Name = SpeciesBox.Text,
                 HeartwoodMoisture = double.Parse(textBox1.Text),
@@ -59,20 +55,22 @@ namespace WoodWorking
                 RadialShrinkage = double.Parse(textBox3.Text),
                 TangentialShrinkage = double.Parse(textBox4.Text),
                 VolumetricShrinkage = double.Parse(textBox5.Text),
+                RadialChangeCoefficient = double.Parse(RadialChangeBox.Text),
+                TangentialChangeCoefficient = double.Parse(TangentialChangeBox.Text),
                 NativeLocation = (NativeLocation)comboBox1.SelectedItem
             };
 
-            if (Species != null && !Species.Equals(editedSpecies))
+            if (Species != null && !Species.Equals(EditedSpecies))
 
                 Program.SpeciesList.Remove(Species);
 
-            if (Species == null || !Species.Equals(editedSpecies))
+            if (Species == null || !Species.Equals(EditedSpecies))
             {
-                Program.SpeciesList.Add(editedSpecies);
+                Program.SpeciesList.Add(EditedSpecies);
                 Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
                 Program.WriteSpecies();
-                Program.startForm.RefreshSpecies();
-                Species = editedSpecies;
+                Program.StartForm.RefreshSpecies();
+                Species = EditedSpecies;
             }
 
             DisableEdits();
@@ -87,9 +85,12 @@ namespace WoodWorking
             textBox3.Enabled = true;
             textBox4.Enabled = true;
             textBox5.Enabled = true;
+            TangentialChangeBox.Enabled = true;
+            RadialChangeBox.Enabled = true;
             comboBox1.Enabled = true;
             EditButton.Visible = false;
             DeleteButton.Visible = false;
+            CalculationsButton.Visible = false;
         }
 
         private void DisableEdits()
@@ -101,15 +102,24 @@ namespace WoodWorking
             textBox3.Enabled = false;
             textBox4.Enabled = false;
             textBox5.Enabled = false;
+            RadialChangeBox.Enabled = false;
+            TangentialChangeBox.Enabled = false;
             comboBox1.Enabled = false;
             EditButton.Visible = true;
             DeleteButton.Visible = true;
+            CalculationsButton.Visible = true;
         }
 
         private void DeleteSpecies(object sender, EventArgs e)
         {
-            VerifyDelete deleteWindow = new VerifyDelete(Species);
+            var deleteWindow = new VerifyDelete(Species);
             deleteWindow.ShowDialog();
+        }
+
+        private void ViewCalculations(object sender, EventArgs e)
+        {
+            var calcWindow = new CalculationsForm(Species);
+            calcWindow.ShowDialog();
         }
     }
 }

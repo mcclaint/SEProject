@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -10,25 +9,24 @@ namespace WoodWorking
     public static class Program
     {
         public static List<Species> SpeciesList;
-        public static Form1 startForm;
+        public static Form1 StartForm;
 
         [STAThread]
         static void Main()
         {
-            initialize();
-
+            Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            startForm = new Form1();
-            Application.Run(startForm);
+            StartForm = new Form1();
+            Application.Run(StartForm);
         }
 
-        static void initialize()
+        static void Initialize()
         {
             SpeciesList = new List<Species>();
-            string line;
             using (var reader = new StreamReader("./data.txt"))
             {
+                string line;
                 while (!string.IsNullOrWhiteSpace((line = reader.ReadLine())))
                 {
                     var words = line.Split('|');
@@ -39,7 +37,9 @@ namespace WoodWorking
                         RadialShrinkage = double.Parse(words[3]),
                         TangentialShrinkage = double.Parse(words[4]),
                         VolumetricShrinkage = double.Parse(words[5]),
-                        NativeLocation = (NativeLocation)Enum.Parse(typeof(NativeLocation), words[6])
+                        NativeLocation = (NativeLocation)Enum.Parse(typeof(NativeLocation), words[6]),
+                        RadialChangeCoefficient = double.Parse(words[7]),
+                        TangentialChangeCoefficient = double.Parse(words[8])
                     });
                 }
             }
@@ -57,7 +57,9 @@ namespace WoodWorking
                         s.RadialShrinkage + "|" +
                         s.TangentialShrinkage + "|" +
                         s.VolumetricShrinkage + "|" +
-                        s.NativeLocation
+                        s.NativeLocation + "|" +
+                        s.RadialChangeCoefficient + "|" +
+                        s.TangentialChangeCoefficient
                     ));
             }
         }
@@ -65,7 +67,7 @@ namespace WoodWorking
         //WARNING
         //WARNING
         //------ This code is to only be used for initially setting up data------
-        //------ Do not call this method and do not alter------
+        //------ Do not call this method or any code below this point------
         static List<Species> PopulateSpecies()
         {
             var speciesList = new List<Species>();
@@ -83,7 +85,7 @@ namespace WoodWorking
                     {
                         treeName += words[i] + " ";
                     }
-                    if (!speciesList.Any(s => s.Name == treeName))
+                    if (speciesList.All(s => s.Name != treeName))
                     {
                         speciesList.Add(new Species
                         {
@@ -105,7 +107,7 @@ namespace WoodWorking
                     {
                         treeName += words[i] + " ";
                     }
-                    if (!speciesList.Any(s => s.Name == treeName))
+                    if (speciesList.All(s => s.Name != treeName))
                     {
                         NativeLocation nativeLocation;
 
@@ -165,6 +167,44 @@ namespace WoodWorking
             }
 
             return speciesList.OrderBy(s => s.Name).ToList();
+        }
+
+        public static void ParseDimensionChanges()
+        {
+            using (var reader = new StreamReader("./dimenChange.txt"))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    string[] words = line.Split((string[])null, StringSplitOptions.RemoveEmptyEntries); ;
+
+                    for (int i = 0; i < words.Count(); i++)
+                    {
+                        words[i] = words[i].Trim(',');
+                    }
+
+                    string name = "";
+
+                    for (int i = 0; i < words.Length - 2; i++)
+                    {
+                        name += words[i] + " ";
+                    }
+
+                    name = name.Trim();
+
+                    var editSpecies = SpeciesList.FirstOrDefault(s => s.Name.ToLower().Trim().Contains(name.ToLower().Trim()));
+
+                    if (editSpecies != null)
+                    {
+                        editSpecies.RadialChangeCoefficient = double.Parse(words[words.Length - 2]);
+                        editSpecies.TangentialChangeCoefficient = double.Parse(words[words.Length - 1]);
+                    }
+                }
+                WriteSpecies();
+            }
         }
     }
 }

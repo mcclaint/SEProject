@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WoodWorking
 {
@@ -14,19 +10,23 @@ namespace WoodWorking
         public double RadialShrinkage { get; set; }
         public double TangentialShrinkage { get; set; }
         public double VolumetricShrinkage { get; set; }
+        public double TangentialChangeCoefficient { get; set; }
+        public double RadialChangeCoefficient { get; set; }
         public NativeLocation NativeLocation { get; set; }
 
         public bool Equals(Species other)
         {
-            return (
+            return
                 this.Name == other.Name &&
                 this.HeartwoodMoisture == other.HeartwoodMoisture &&
                 this.SapwoodMoisture == other.SapwoodMoisture &&
                 this.RadialShrinkage == other.RadialShrinkage &&
                 this.TangentialShrinkage == other.TangentialShrinkage &&
                 this.VolumetricShrinkage == other.VolumetricShrinkage &&
+                this.TangentialChangeCoefficient == other.TangentialChangeCoefficient &&
+                this.RadialChangeCoefficient == other.TangentialChangeCoefficient &&
                 this.NativeLocation == other.NativeLocation
-            );
+            ;
         }
     }
 

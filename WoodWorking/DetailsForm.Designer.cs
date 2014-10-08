@@ -44,6 +44,11 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.CalculationsButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.RadialChangeBox = new System.Windows.Forms.TextBox();
+            this.TangentialChangeBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label8
@@ -70,7 +75,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(233, 190);
+            this.label10.Location = new System.Drawing.Point(230, 145);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(140, 25);
             this.label10.TabIndex = 9;
@@ -80,7 +85,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(451, 190);
+            this.label11.Location = new System.Drawing.Point(451, 145);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(182, 25);
             this.label11.TabIndex = 10;
@@ -90,7 +95,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(233, 318);
+            this.label12.Location = new System.Drawing.Point(230, 219);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(182, 25);
             this.label12.TabIndex = 11;
@@ -100,7 +105,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(451, 318);
+            this.label13.Location = new System.Drawing.Point(451, 219);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(161, 25);
             this.label13.TabIndex = 12;
@@ -125,7 +130,7 @@
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(237, 233);
+            this.textBox3.Location = new System.Drawing.Point(235, 179);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 26);
             this.textBox3.TabIndex = 15;
@@ -133,7 +138,7 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(455, 233);
+            this.textBox4.Location = new System.Drawing.Point(456, 179);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 26);
             this.textBox4.TabIndex = 16;
@@ -141,7 +146,7 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(238, 361);
+            this.textBox5.Location = new System.Drawing.Point(235, 247);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 26);
             this.textBox5.TabIndex = 17;
@@ -158,9 +163,9 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(39, 222);
+            this.EditButton.Location = new System.Drawing.Point(39, 219);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(113, 37);
+            this.EditButton.Size = new System.Drawing.Size(113, 40);
             this.EditButton.TabIndex = 20;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -180,7 +185,7 @@
             // 
             this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(456, 361);
+            this.comboBox1.Location = new System.Drawing.Point(456, 247);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 22;
@@ -195,11 +200,62 @@
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteSpecies);
             // 
+            // CalculationsButton
+            // 
+            this.CalculationsButton.Location = new System.Drawing.Point(39, 171);
+            this.CalculationsButton.Name = "CalculationsButton";
+            this.CalculationsButton.Size = new System.Drawing.Size(113, 42);
+            this.CalculationsButton.TabIndex = 24;
+            this.CalculationsButton.Text = "Calculations";
+            this.CalculationsButton.UseVisualStyleBackColor = true;
+            this.CalculationsButton.Click += new System.EventHandler(this.ViewCalculations);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(235, 291);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 25);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Radial Change";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(456, 291);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(196, 25);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Tangential Change";
+            // 
+            // RadialChangeBox
+            // 
+            this.RadialChangeBox.Enabled = false;
+            this.RadialChangeBox.Location = new System.Drawing.Point(238, 320);
+            this.RadialChangeBox.Name = "RadialChangeBox";
+            this.RadialChangeBox.Size = new System.Drawing.Size(100, 26);
+            this.RadialChangeBox.TabIndex = 27;
+            // 
+            // TangentialChangeBox
+            // 
+            this.TangentialChangeBox.Enabled = false;
+            this.TangentialChangeBox.Location = new System.Drawing.Point(461, 320);
+            this.TangentialChangeBox.Name = "TangentialChangeBox";
+            this.TangentialChangeBox.Size = new System.Drawing.Size(100, 26);
+            this.TangentialChangeBox.TabIndex = 28;
+            // 
             // DetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 418);
+            this.Controls.Add(this.TangentialChangeBox);
+            this.Controls.Add(this.RadialChangeBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CalculationsButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.SaveButton);
@@ -241,6 +297,11 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button CalculationsButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox RadialChangeBox;
+        private System.Windows.Forms.TextBox TangentialChangeBox;
 
 
     }
