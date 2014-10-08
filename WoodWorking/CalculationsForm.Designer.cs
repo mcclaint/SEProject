@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.CalculateButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.initialMoistureBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.finalMoistureBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lengthBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.radialChangeBox = new System.Windows.Forms.TextBox();
+            this.tangentialChangeBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CalculateButton
@@ -51,12 +51,12 @@
             this.CalculateButton.UseVisualStyleBackColor = true;
             this.CalculateButton.Click += new System.EventHandler(this.DoCalculations);
             // 
-            // textBox1
+            // initialMoistureBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(52, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 1;
+            this.initialMoistureBox.Location = new System.Drawing.Point(52, 55);
+            this.initialMoistureBox.Name = "initialMoistureBox";
+            this.initialMoistureBox.Size = new System.Drawing.Size(100, 26);
+            this.initialMoistureBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -76,12 +76,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Final Moisture Content";
             // 
-            // textBox2
+            // finalMoistureBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(52, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 4;
+            this.finalMoistureBox.Location = new System.Drawing.Point(52, 151);
+            this.finalMoistureBox.Name = "finalMoistureBox";
+            this.finalMoistureBox.Size = new System.Drawing.Size(100, 26);
+            this.finalMoistureBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -92,12 +92,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Initial Length";
             // 
-            // textBox3
+            // lengthBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(52, 263);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 6;
+            this.lengthBox.Location = new System.Drawing.Point(52, 263);
+            this.lengthBox.Name = "lengthBox";
+            this.lengthBox.Size = new System.Drawing.Size(100, 26);
+            this.lengthBox.TabIndex = 6;
             // 
             // label4
             // 
@@ -117,37 +117,37 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Tangential Change";
             // 
-            // textBox4
+            // radialChangeBox
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(436, 121);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 26);
-            this.textBox4.TabIndex = 9;
+            this.radialChangeBox.Enabled = false;
+            this.radialChangeBox.Location = new System.Drawing.Point(436, 121);
+            this.radialChangeBox.Name = "radialChangeBox";
+            this.radialChangeBox.Size = new System.Drawing.Size(100, 26);
+            this.radialChangeBox.TabIndex = 9;
             // 
-            // textBox5
+            // tangentialChangeBox
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(436, 227);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 26);
-            this.textBox5.TabIndex = 10;
+            this.tangentialChangeBox.Enabled = false;
+            this.tangentialChangeBox.Location = new System.Drawing.Point(436, 227);
+            this.tangentialChangeBox.Name = "tangentialChangeBox";
+            this.tangentialChangeBox.Size = new System.Drawing.Size(100, 26);
+            this.tangentialChangeBox.TabIndex = 10;
             // 
             // CalculationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 383);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tangentialChangeBox);
+            this.Controls.Add(this.radialChangeBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.lengthBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.finalMoistureBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.initialMoistureBox);
             this.Controls.Add(this.CalculateButton);
             this.Name = "CalculationsForm";
             this.Text = "CalculationsForm";
@@ -159,15 +159,15 @@
         #endregion
 
         private System.Windows.Forms.Button CalculateButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox initialMoistureBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox finalMoistureBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox lengthBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox radialChangeBox;
+        private System.Windows.Forms.TextBox tangentialChangeBox;
     }
 }

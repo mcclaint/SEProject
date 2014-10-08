@@ -12,38 +12,36 @@ namespace WoodWorking
             InitializeComponent();
         }
 
-        public double CalculateTangDimensionalChange(double length, double initMoisture, double alteredMoisture)
+        public double CalculateTangDimensionalChange()
         {
-            return length*(Species.TangentialChangeCoefficient*(alteredMoisture - initMoisture));
+            return double.Parse(lengthBox.Text) * (Species.TangentialChangeCoefficient * (double.Parse(finalMoistureBox.Text) - double.Parse(initialMoistureBox.Text)));
         }
 
-        public double CalculateRadialDimensionalChange(double length, double initMoisture, double alteredMoisture)
+        public double CalculateRadialDimensionalChange()
         {
-            return length * (Species.RadialChangeCoefficient * (alteredMoisture - initMoisture));
+            return double.Parse(lengthBox.Text) * (Species.RadialChangeCoefficient * (double.Parse(finalMoistureBox.Text) - double.Parse(initialMoistureBox.Text)));
         }
 
         private void DoCalculations(object sender, System.EventArgs e)
         {
             try
             {
-                textBox4.Text =
-                    CalculateRadialDimensionalChange(double.Parse(textBox3.Text), double.Parse(textBox1.Text),
-                        double.Parse(textBox2.Text)).ToString();
+                radialChangeBox.Text =
+                    CalculateRadialDimensionalChange().ToString();
             }
             catch (Exception)
             {
-                textBox4.Text = "";
+                radialChangeBox.Text = "";
             }
 
             try
             {
-                textBox5.Text =
-                    CalculateTangDimensionalChange(double.Parse(textBox3.Text), double.Parse(textBox1.Text),
-                        double.Parse(textBox2.Text)).ToString();
+                tangentialChangeBox.Text =
+                    CalculateTangDimensionalChange().ToString();
             }
             catch (Exception)
             {
-                textBox5.Text = "";
+                tangentialChangeBox.Text = "";
             }
 
         }
