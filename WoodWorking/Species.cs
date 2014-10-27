@@ -12,6 +12,18 @@ namespace WoodWorking
         public double VolumetricShrinkage { get; set; }
         public double TangentialChangeCoefficient { get; set; }
         public double RadialChangeCoefficient { get; set; }
+        public double ModulusOfElasticity { get; set; }
+        public double SpecificGravityAtGreen { get; set; }
+        public double SpecificGravityAt12 { get; set; }
+        public double FlatShearModulusRatio { get; set; }
+        public double EdgeShearModulusRatio { get; set; }
+        public double EdgeShearModulus {
+            get { return EdgeShearModulusRatio*(ModulusOfElasticity + ModulusOfElasticity*.1); }
+        }
+
+        public double FlatShearModulus {
+            get { return FlatShearModulusRatio*(ModulusOfElasticity + ModulusOfElasticity*.1); }
+        }
         public NativeLocation NativeLocation { get; set; }
 
         public bool Equals(Species other)

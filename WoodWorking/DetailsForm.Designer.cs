@@ -233,7 +233,7 @@
             // RadialChangeBox
             // 
             this.RadialChangeBox.Enabled = false;
-            this.RadialChangeBox.Location = new System.Drawing.Point(238, 320);
+            this.RadialChangeBox.Location = new System.Drawing.Point(235, 320);
             this.RadialChangeBox.Name = "RadialChangeBox";
             this.RadialChangeBox.Size = new System.Drawing.Size(100, 26);
             this.RadialChangeBox.TabIndex = 27;
@@ -241,7 +241,7 @@
             // TangentialChangeBox
             // 
             this.TangentialChangeBox.Enabled = false;
-            this.TangentialChangeBox.Location = new System.Drawing.Point(461, 320);
+            this.TangentialChangeBox.Location = new System.Drawing.Point(456, 320);
             this.TangentialChangeBox.Name = "TangentialChangeBox";
             this.TangentialChangeBox.Size = new System.Drawing.Size(100, 26);
             this.TangentialChangeBox.TabIndex = 28;
@@ -273,7 +273,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Name = "DetailsForm";
-            this.Text = "DetailsForm";
+            this.Text = "Details";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +302,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox RadialChangeBox;
         private System.Windows.Forms.TextBox TangentialChangeBox;
+
 
 
     }

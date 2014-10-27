@@ -12,17 +12,17 @@ namespace WoodWorking
             InitializeComponent();
         }
 
-        public double CalculateTangDimensionalChange()
+        private double CalculateTangDimensionalChange()
         {
             return double.Parse(lengthBox.Text) * (Species.TangentialChangeCoefficient * (double.Parse(finalMoistureBox.Text) - double.Parse(initialMoistureBox.Text)));
         }
 
-        public double CalculateRadialDimensionalChange()
+        private double CalculateRadialDimensionalChange()
         {
             return double.Parse(lengthBox.Text) * (Species.RadialChangeCoefficient * (double.Parse(finalMoistureBox.Text) - double.Parse(initialMoistureBox.Text)));
         }
 
-        private void DoCalculations(object sender, System.EventArgs e)
+        public void DoDimensionChangeCalculations(object sender, System.EventArgs e)
         {
             try
             {
@@ -45,5 +45,39 @@ namespace WoodWorking
             }
 
         }
+
+        private void CalculateDeflections(object sender, EventArgs e)
+        {
+            try
+            {
+                FlatResultBox.Text = CalculateDeflection(Species.FlatShearModulus).ToString();
+            }
+            catch (Exception)
+            {
+                FlatResultBox.Text = "";
+            }
+            try
+            {
+                EdgeResultBox.Text = CalculateDeflection(Species.EdgeShearModulus).ToString();
+            }
+            catch (Exception)
+            {
+                EdgeResultBox.Text = "";
+            }
+        }
+
+        private double CalculateDeflection(double shearModulus)
+        {
+            double width = double.Parse(WidthBox.Text);
+            double height = double.Parse(HeightBox.Text);
+            double span = double.Parse(SpanBox.Text);
+
+            double modifiedArea = 5/6*width*height;
+            double intertia = width*height*height*height/12;
+
+            return 0;
+        }
+
+        
     }
 }

@@ -39,7 +39,10 @@ namespace WoodWorking
                         VolumetricShrinkage = double.Parse(words[5]),
                         NativeLocation = (NativeLocation)Enum.Parse(typeof(NativeLocation), words[6]),
                         RadialChangeCoefficient = double.Parse(words[7]),
-                        TangentialChangeCoefficient = double.Parse(words[8])
+                        ModulusOfElasticity = double.Parse(words[8]),
+                        EdgeShearModulusRatio = double.Parse(words[9]),
+                        FlatShearModulusRatio = double.Parse(words[10]),
+                        TangentialChangeCoefficient = double.Parse(words[11])
                     });
                 }
             }
@@ -59,6 +62,9 @@ namespace WoodWorking
                         s.VolumetricShrinkage + "|" +
                         s.NativeLocation + "|" +
                         s.RadialChangeCoefficient + "|" +
+                        s.ModulusOfElasticity + "|" +
+                        s.EdgeShearModulusRatio + "|" +
+                        s.FlatShearModulusRatio + "|" +
                         s.TangentialChangeCoefficient
                     ));
             }
@@ -203,6 +209,108 @@ namespace WoodWorking
                         editSpecies.TangentialChangeCoefficient = double.Parse(words[words.Length - 1]);
                     }
                 }
+                WriteSpecies();
+            }
+        }
+
+        public static void ParseElasticityData()
+        {
+            using (var reader = new StreamReader("./modulusData.txt"))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != "canada")
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    string[] words = line.Split((string[])null, StringSplitOptions.RemoveEmptyEntries); ;
+
+                    for (int i = 0; i < words.Count(); i++)
+                    {
+                        words[i] = words[i].Trim(',');
+                    }
+
+                    string name = "";
+
+                    for (int i = 0; i < words.Length - 22; i++)
+                    {
+                        name += words[i] + " ";
+                    }
+
+                    name = name.Trim();
+
+                    var editSpecies = SpeciesList.FirstOrDefault(s => s.Name.ToLower().Trim().Contains(name.ToLower().Trim()));
+
+                    if (editSpecies != null)
+                    {
+                        editSpecies.ModulusOfElasticity = double.Parse(words[words.Length - 19]);
+                        editSpecies.SpecificGravityAtGreen = double.Parse(words[words.Length - 21]);
+                        if (words[words.Length - 10] != "-")
+                            editSpecies.SpecificGravityAt12 = double.Parse(words[words.Length - 10]);
+                    }
+                }
+
+                while ((line = reader.ReadLine()) != "break")
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    string[] words = line.Split((string[])null, StringSplitOptions.RemoveEmptyEntries); ;
+
+                    for (int i = 0; i < words.Count(); i++)
+                    {
+                        words[i] = words[i].Trim(',');
+                    }
+
+                    string name = "";
+
+                    for (int i = 0; i < words.Length - 13; i++)
+                    {
+                        name += words[i] + " ";
+                    }
+
+                    name = name.Trim();
+
+                    var editSpecies = SpeciesList.FirstOrDefault(s => s.Name.ToLower().Trim().Contains(name.ToLower().Trim()));
+
+                    if (editSpecies != null)
+                    {
+                        editSpecies.ModulusOfElasticity = double.Parse(words[words.Length - 10]);
+                        editSpecies.SpecificGravityAtGreen = double.Parse(words[words.Length - 12]);
+                    }
+                }
+
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    string[] words = line.Split((string[])null, StringSplitOptions.RemoveEmptyEntries); ;
+
+                    for (int i = 0; i < words.Count(); i++)
+                    {
+                        words[i] = words[i].Trim(',');
+                    }
+
+                    string name = "";
+
+                    for (int i = 0; i < words.Length - 5; i++)
+                    {
+                        name += words[i] + " ";
+                    }
+
+                    name = name.Trim();
+
+                    var editSpecies = SpeciesList.FirstOrDefault(s => s.Name.ToLower().Trim().Contains(name.ToLower().Trim()));
+
+                    if (editSpecies != null)
+                    {
+                        if (words[words.Length - 2] != "-")
+                            editSpecies.FlatShearModulusRatio = double.Parse(words[words.Length - 2]);
+                        editSpecies.EdgeShearModulusRatio = double.Parse(words[words.Length - 3]);
+                    }
+                }
+
                 WriteSpecies();
             }
         }
