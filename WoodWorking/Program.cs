@@ -14,7 +14,17 @@ namespace WoodWorking
         [STAThread]
         static void Main()
         {
-            Initialize();
+            try
+            {
+                Initialize();
+            }
+            catch (Exception)
+            {
+                var error = new FileUploadError();
+                error.ShowDialog();
+                return;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             StartForm = new Form1();
@@ -42,7 +52,8 @@ namespace WoodWorking
                         ModulusOfElasticity = double.Parse(words[8]),
                         EdgeShearModulusRatio = double.Parse(words[9]),
                         FlatShearModulusRatio = double.Parse(words[10]),
-                        TangentialChangeCoefficient = double.Parse(words[11])
+                        TangentialChangeCoefficient = double.Parse(words[11]),
+                        SpecificGravityAtGreen = double.Parse(words[12])
                     });
                 }
             }
@@ -65,7 +76,8 @@ namespace WoodWorking
                         s.ModulusOfElasticity + "|" +
                         s.EdgeShearModulusRatio + "|" +
                         s.FlatShearModulusRatio + "|" +
-                        s.TangentialChangeCoefficient
+                        s.TangentialChangeCoefficient + "|" +
+                        s.SpecificGravityAtGreen
                     ));
             }
         }
@@ -74,6 +86,7 @@ namespace WoodWorking
         //WARNING
         //------ This code is to only be used for initially setting up data------
         //------ Do not call this method or any code below this point------
+        #region data generation/parsing
         static List<Species> PopulateSpecies()
         {
             var speciesList = new List<Species>();
@@ -314,5 +327,6 @@ namespace WoodWorking
                 WriteSpecies();
             }
         }
+        #endregion
     }
 }
