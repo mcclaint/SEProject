@@ -122,18 +122,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(535, 234);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 20);
+            this.label5.Size = new System.Drawing.Size(167, 20);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Tangential Change";
+            this.label5.Text = "Tangential Change (ft)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(535, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 20);
+            this.label4.Size = new System.Drawing.Size(138, 20);
             this.label4.TabIndex = 18;
-            this.label4.Text = "Radial Change";
+            this.label4.Text = "Radial Change (ft)";
             // 
             // lengthBox
             // 
@@ -147,9 +147,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(155, 280);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 20);
+            this.label3.Size = new System.Drawing.Size(124, 20);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Initial Length";
+            this.label3.Text = "Initial Length (ft)";
             // 
             // finalMoistureBox
             // 
@@ -163,18 +163,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(151, 181);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 20);
+            this.label2.Size = new System.Drawing.Size(197, 20);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Final Moisture Content";
+            this.label2.Text = "Final Moisture Content (%)";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(151, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 20);
+            this.label1.Size = new System.Drawing.Size(200, 20);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Initial Moisture Content";
+            this.label1.Text = "Initial Moisture Content (%)";
             // 
             // initialMoistureBox
             // 
@@ -309,27 +309,27 @@
             this.SpanLabel.AutoSize = true;
             this.SpanLabel.Location = new System.Drawing.Point(66, 276);
             this.SpanLabel.Name = "SpanLabel";
-            this.SpanLabel.Size = new System.Drawing.Size(93, 20);
+            this.SpanLabel.Size = new System.Drawing.Size(117, 20);
             this.SpanLabel.TabIndex = 5;
-            this.SpanLabel.Text = "Beam Span";
+            this.SpanLabel.Text = "Beam Span (ft)";
             // 
             // HeightLabel
             // 
             this.HeightLabel.AutoSize = true;
             this.HeightLabel.Location = new System.Drawing.Point(66, 192);
             this.HeightLabel.Name = "HeightLabel";
-            this.HeightLabel.Size = new System.Drawing.Size(102, 20);
+            this.HeightLabel.Size = new System.Drawing.Size(126, 20);
             this.HeightLabel.TabIndex = 4;
-            this.HeightLabel.Text = "Beam Height";
+            this.HeightLabel.Text = "Beam Height (ft)";
             // 
             // WidthLabel
             // 
             this.WidthLabel.AutoSize = true;
             this.WidthLabel.Location = new System.Drawing.Point(62, 108);
             this.WidthLabel.Name = "WidthLabel";
-            this.WidthLabel.Size = new System.Drawing.Size(96, 20);
+            this.WidthLabel.Size = new System.Drawing.Size(120, 20);
             this.WidthLabel.TabIndex = 3;
-            this.WidthLabel.Text = "Beam Width";
+            this.WidthLabel.Text = "Beam Width (ft)";
             // 
             // SpanBox
             // 
@@ -399,9 +399,9 @@
             this.LoadLabel.AutoSize = true;
             this.LoadLabel.Location = new System.Drawing.Point(305, 53);
             this.LoadLabel.Name = "LoadLabel";
-            this.LoadLabel.Size = new System.Drawing.Size(99, 20);
+            this.LoadLabel.Size = new System.Drawing.Size(125, 20);
             this.LoadLabel.TabIndex = 11;
-            this.LoadLabel.Text = "Load Weight";
+            this.LoadLabel.Text = "Load Weight (lb)";
             // 
             // LoadBox
             // 
