@@ -49,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.RadialChangeBox = new System.Windows.Forms.TextBox();
             this.TangentialChangeBox = new System.Windows.Forms.TextBox();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label8
@@ -187,7 +188,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(456, 247);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.Size = new System.Drawing.Size(144, 28);
             this.comboBox1.TabIndex = 22;
             // 
             // DeleteButton
@@ -246,11 +247,23 @@
             this.TangentialChangeBox.Size = new System.Drawing.Size(100, 26);
             this.TangentialChangeBox.TabIndex = 28;
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.ErrorLabel.Location = new System.Drawing.Point(176, 379);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(401, 20);
+            this.ErrorLabel.TabIndex = 29;
+            this.ErrorLabel.Text = "This species did not save. There is an error on the page.";
+            this.ErrorLabel.Visible = false;
+            // 
             // DetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 418);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.TangentialChangeBox);
             this.Controls.Add(this.RadialChangeBox);
             this.Controls.Add(this.label2);
@@ -302,6 +315,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox RadialChangeBox;
         private System.Windows.Forms.TextBox TangentialChangeBox;
+        private System.Windows.Forms.Label ErrorLabel;
 
 
 

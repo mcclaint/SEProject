@@ -46,6 +46,14 @@ namespace WoodWorking
 
         private void SaveSpecies(object sender, EventArgs e)
         {
+            if (!validateSave())
+            {
+                ErrorLabel.Visible = true;
+                return;
+            }
+
+            ErrorLabel.Visible = false;
+
             EditedSpecies = new Species
             {
                 Name = SpeciesBox.Text,
@@ -73,6 +81,21 @@ namespace WoodWorking
             }
 
             DisableEdits();
+        }
+
+        private bool validateSave()
+        {
+            double temp;
+
+            return (
+                !string.IsNullOrEmpty(SpeciesBox.Text)&&
+                double.TryParse(textBox1.Text, out temp) &&
+                double.TryParse(textBox2.Text, out temp) &&
+                double.TryParse(textBox3.Text, out temp) &&
+                double.TryParse(textBox4.Text, out temp) &&
+                double.TryParse(textBox5.Text, out temp) &&
+                double.TryParse(RadialChangeBox.Text, out temp) &&
+                double.TryParse(TangentialChangeBox.Text, out temp));
         }
 
         private void EnableEdits()
