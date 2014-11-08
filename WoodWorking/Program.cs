@@ -20,7 +20,7 @@ namespace WoodWorking
             }
             catch (Exception)
             {
-                var error = new FileUploadError();
+                var error = new Error("File upload failed.");
                 error.ShowDialog();
                 return;
             }

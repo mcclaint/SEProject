@@ -40,6 +40,53 @@ namespace WoodWorking
                 this.NativeLocation == other.NativeLocation
             ;
         }
+
+        public double CalculateTangDimensionalChange(double length, double initialMoisture, double finalMoisture)
+        {
+            return length * (TangentialChangeCoefficient * (finalMoisture - initialMoisture));
+        }
+
+        public double CalculateRadialDimensionalChange(double length, double initialMoisture, double finalMoisture)
+        {
+            return length * (RadialChangeCoefficient * (finalMoisture - initialMoisture));
+        }
+
+        public double GetDensityAtMoistureContent(double moistureContent)
+        {
+            var a = (30 - moistureContent) / 30;
+            var specificGravityForMoistureContent = SpecificGravityAtGreen /
+                                             (1 - (.256 * a * SpecificGravityAtGreen));
+
+            return 62.4 * specificGravityForMoistureContent * (1 + moistureContent / 100);
+        }
+
+        public double CalculateDeflectionForEdge(double width, double height, double span, double load)
+        {
+            double modifiedArea = ((double)5 / (double)6) * width * height;
+            double intertia = width * height * height * height / 12;
+
+            double kb = ((double)1 / (double)48);
+            double ks = .25;
+
+            var firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
+            var secondBlock = (ks * load * span) / (EdgeShearModulus * modifiedArea);
+
+            return firstBlock + secondBlock;
+        }
+
+        public double CalculateDeflectionForFlat(double width, double height, double span, double load)
+        {
+            double modifiedArea = ((double)5 / (double)6) * width * height;
+            double intertia = width * height * height * height / 12;
+
+            double kb = ((double)1 / (double)48);
+            double ks = .25;
+
+            var firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
+            var secondBlock = (ks * load * span) / (FlatShearModulus * modifiedArea);
+
+            return firstBlock + secondBlock;
+        }
     }
 
     public enum NativeLocation

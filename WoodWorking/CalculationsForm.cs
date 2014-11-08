@@ -8,7 +8,7 @@ namespace WoodWorking
         public Species Species;
         public CalculationsForm(Species species)
         {
-            this.Species = species;
+            Species = species;
             InitializeComponent();
         }
 
@@ -24,23 +24,35 @@ namespace WoodWorking
 
         public void DoDimensionChangeCalculations(object sender, System.EventArgs e)
         {
+            double length;
+            double initialMoisture;
+            double finalMoisture;
+
+            double.TryParse(lengthBox.Text, out length);
+            double.TryParse(initialMoistureBox.Text, out initialMoisture);
+            double.TryParse(finalMoistureBox.Text, out finalMoisture);
+
             try
             {
                 radialChangeBox.Text =
-                    CalculateRadialDimensionalChange().ToString();
+                    Species.CalculateRadialDimensionalChange(length, initialMoisture, finalMoisture).ToString("N2");
             }
             catch (Exception)
             {
+                var errorBox = new Error("Radial change calculation has failed.");
+                errorBox.ShowDialog();
                 radialChangeBox.Text = "";
             }
 
             try
             {
                 tangentialChangeBox.Text =
-                    CalculateTangDimensionalChange().ToString();
+                    Species.CalculateTangDimensionalChange(length, initialMoisture, finalMoisture).ToString("N2"); ;
             }
             catch (Exception)
             {
+                var errorBox = new Error("Tangential change calculation has failed.");
+                errorBox.ShowDialog();
                 tangentialChangeBox.Text = "";
             }
 
@@ -48,41 +60,35 @@ namespace WoodWorking
 
         private void CalculateDeflections(object sender, EventArgs e)
         {
+            double width; 
+            double.TryParse(WidthBox.Text, out width);
+            double height; 
+            double.TryParse(HeightBox.Text, out height);
+            double span; 
+            double.TryParse(SpanBox.Text, out span);
+            double load; 
+            double.TryParse(LoadBox.Text, out load);
+
             try
             {
-                FlatResultBox.Text = CalculateDeflection(Species.FlatShearModulus).ToString("N2");
+                FlatResultBox.Text = Species.CalculateDeflectionForFlat(width,height,span,load).ToString("N2");
             }
             catch (Exception)
             {
+                var errorBox = new Error("Flat deflection calculation has failed.");
+                errorBox.ShowDialog();
                 FlatResultBox.Text = "";
             }
             try
             {
-                EdgeResultBox.Text = CalculateDeflection(Species.EdgeShearModulus).ToString("N2");
+                EdgeResultBox.Text = Species.CalculateDeflectionForEdge(width,height,span,load).ToString("N2");
             }
             catch (Exception)
             {
+                var errorBox = new Error("Edge deflection change calculation has failed.");
+                errorBox.ShowDialog();
                 EdgeResultBox.Text = "";
             }
-        }
-
-        private double CalculateDeflection(double shearModulus)
-        {
-            double width = double.Parse(WidthBox.Text);
-            double height = double.Parse(HeightBox.Text);
-            double span = double.Parse(SpanBox.Text);
-            double load = double.Parse(LoadBox.Text);
-
-            double modifiedArea = ((double)5/(double)6)*width*height;
-            double intertia = width*height*height*height/12;
-
-            double kb = ((double)1/(double)48);
-            double ks = .25;
-
-            var firstBlock = (kb*load*span*span*span)/(Species.ModulusOfElasticity*intertia);
-            var secondBlock = (ks*load*span)/(shearModulus*modifiedArea);
-
-            return firstBlock + secondBlock;
         }
 
         private void UpdateMoistureLabel(object sender, EventArgs e)
@@ -98,12 +104,7 @@ namespace WoodWorking
                 return;
             }
 
-            var moistureLevel = double.Parse(MoistureLevel.Text);
-            var a = (30 - moistureLevel)/30;
-            var specificGravityForMoistureContent = Species.SpecificGravityAtGreen/
-                                             (1 - (.256*a*Species.SpecificGravityAtGreen));
-
-            var density = 62.4 * specificGravityForMoistureContent * (1 + moistureLevel/100);
+            var density = Species.GetDensityAtMoistureContent(double.Parse(MoistureLevel.Text));
             DensityLevel.Text = density.ToString("N2");
         }
 
