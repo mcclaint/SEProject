@@ -4,19 +4,19 @@ namespace WoodWorking
 {
     public class Species : IEquatable<Species>
     {
-        public string Name { get; set; }
-        public double HeartwoodMoisture { get; set; }
-        public double SapwoodMoisture { get; set; }
-        public double RadialShrinkage { get; set; }
-        public double TangentialShrinkage { get; set; }
-        public double VolumetricShrinkage { get; set; }
-        public double TangentialChangeCoefficient { get; set; }
-        public double RadialChangeCoefficient { get; set; }
-        public double ModulusOfElasticity { get; set; }
-        public double SpecificGravityAtGreen { get; set; }
-        public double SpecificGravityAt12 { get; set; }
-        public double FlatShearModulusRatio { get; set; }
-        public double EdgeShearModulusRatio { get; set; }
+        public string Name { get; internal set; }
+        public double HeartwoodMoisture { get; internal set; }
+        public double SapwoodMoisture { get; internal set; }
+        public double RadialShrinkage { get; internal set; }
+        public double TangentialShrinkage { get; internal set; }
+        public double VolumetricShrinkage { get; internal set; }
+        public double TangentialChangeCoefficient { get; internal set; }
+        public double RadialChangeCoefficient { get; internal set; }
+        public double ModulusOfElasticity { get; internal set; }
+        public double SpecificGravityAtGreen { get; internal set; }
+        public double SpecificGravityAt12 { get; internal set; }
+        public double FlatShearModulusRatio { get; internal set; }
+        public double EdgeShearModulusRatio { get; internal set; }
         public double EdgeShearModulus {
             get { return EdgeShearModulusRatio*(ModulusOfElasticity + ModulusOfElasticity*.1); }
         }
@@ -24,7 +24,7 @@ namespace WoodWorking
         public double FlatShearModulus {
             get { return FlatShearModulusRatio*(ModulusOfElasticity + ModulusOfElasticity*.1); }
         }
-        public NativeLocation NativeLocation { get; set; }
+        public NativeLocation NativeLocation { get; internal set; }
 
         public bool Equals(Species other)
         {
