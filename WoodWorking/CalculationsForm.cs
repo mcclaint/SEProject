@@ -12,16 +12,6 @@ namespace WoodWorking
             InitializeComponent();
         }
 
-        private double CalculateTangDimensionalChange()
-        {
-            return double.Parse(lengthBox.Text) * (Species.TangentialChangeCoefficient * (double.Parse(finalMoistureBox.Text) - double.Parse(initialMoistureBox.Text)));
-        }
-
-        private double CalculateRadialDimensionalChange()
-        {
-            return double.Parse(lengthBox.Text) * (Species.RadialChangeCoefficient * (double.Parse(finalMoistureBox.Text) - double.Parse(initialMoistureBox.Text)));
-        }
-
         public void DoDimensionChangeCalculations(object sender, System.EventArgs e)
         {
             double length;
