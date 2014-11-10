@@ -12,7 +12,7 @@ namespace WoodWorking
             InitializeComponent();
         }
 
-        public void DoDimensionChangeCalculations(object sender, System.EventArgs e)
+        private void DoDimensionChangeCalculations(object sender, System.EventArgs e)
         {
             double length;
             double initialMoisture;
