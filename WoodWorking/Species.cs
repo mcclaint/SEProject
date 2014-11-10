@@ -14,7 +14,6 @@ namespace WoodWorking
         public double RadialChangeCoefficient { get; internal set; }
         public double ModulusOfElasticity { get; internal set; }
         public double SpecificGravityAtGreen { get; internal set; }
-        public double SpecificGravityAt12 { get; internal set; }
         public double FlatShearModulusRatio { get; internal set; }
         public double EdgeShearModulusRatio { get; internal set; }
         public double EdgeShearModulus {
@@ -36,8 +35,12 @@ namespace WoodWorking
                 this.TangentialShrinkage == other.TangentialShrinkage &&
                 this.VolumetricShrinkage == other.VolumetricShrinkage &&
                 this.TangentialChangeCoefficient == other.TangentialChangeCoefficient &&
-                this.RadialChangeCoefficient == other.TangentialChangeCoefficient &&
-                this.NativeLocation == other.NativeLocation
+                this.RadialChangeCoefficient == other.RadialChangeCoefficient &&
+                this.NativeLocation == other.NativeLocation &&
+                this.EdgeShearModulusRatio == other.EdgeShearModulusRatio &&
+                this.FlatShearModulusRatio == other.FlatShearModulusRatio &&
+                this.ModulusOfElasticity == other.ModulusOfElasticity &&
+                this.SpecificGravityAtGreen == other.SpecificGravityAtGreen
             ;
         }
 

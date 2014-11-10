@@ -25,6 +25,10 @@ namespace WoodWorking
                 textBox5.Text = Species.VolumetricShrinkage.ToString();
                 RadialChangeBox.Text = Species.RadialChangeCoefficient.ToString();
                 TangentialChangeBox.Text = Species.TangentialChangeCoefficient.ToString();
+                SGBox.Text = Species.SpecificGravityAtGreen.ToString();
+                ElasticityBox.Text = Species.ModulusOfElasticity.ToString();
+                EdgeBox.Text = Species.EdgeShearModulusRatio.ToString();
+                FlatBox.Text = Species.FlatShearModulusRatio.ToString();
                 comboBox1.SelectedItem = Enum.Parse(typeof(NativeLocation), Species.NativeLocation.ToString());
 
                 SaveButton.Visible = false;
@@ -54,6 +58,21 @@ namespace WoodWorking
 
             ErrorLabel.Visible = false;
 
+            if (Species != null)
+                Program.SpeciesList.Remove(Species);
+
+            if (CheckForDuplicateNames(SpeciesBox.Text))
+            {
+                var error = new Error("A species with that name is already in the data file.");
+                error.ShowDialog();
+                Program.SpeciesList.Add(Species);
+                Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
+                Program.WriteSpecies();
+                Program.StartForm.RefreshSpecies();
+
+                Close();
+            }
+
             EditedSpecies = new Species
             {
                 Name = SpeciesBox.Text,
@@ -64,28 +83,30 @@ namespace WoodWorking
                 VolumetricShrinkage = double.Parse(textBox5.Text),
                 RadialChangeCoefficient = double.Parse(RadialChangeBox.Text),
                 TangentialChangeCoefficient = double.Parse(TangentialChangeBox.Text),
-                NativeLocation = (NativeLocation)comboBox1.SelectedItem
+                NativeLocation = (NativeLocation)comboBox1.SelectedItem,
+                EdgeShearModulusRatio = double.Parse(EdgeBox.Text),
+                FlatShearModulusRatio = double.Parse(FlatBox.Text),
+                ModulusOfElasticity = double.Parse(ElasticityBox.Text),
+                SpecificGravityAtGreen = double.Parse(SGBox.Text)
             };
 
-            if (Species != null && !Species.Equals(EditedSpecies))
-
-                Program.SpeciesList.Remove(Species);
-
-            if (Species == null || !Species.Equals(EditedSpecies))
-            {
-                Program.SpeciesList.Add(EditedSpecies);
-                Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
-                Program.WriteSpecies();
-                Program.StartForm.RefreshSpecies();
-                Species = EditedSpecies;
-            }
+            Program.SpeciesList.Add(EditedSpecies);
+            Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
+            Program.WriteSpecies();
+            Program.StartForm.RefreshSpecies();
+            Species = EditedSpecies;
 
             DisableEdits();
         }
 
+        private bool CheckForDuplicateNames(string name)
+        {
+            return Program.SpeciesList.Any(s => s.Name.Equals(name));
+        }
+
         private bool ValidateSave()
         {
-            if (!SpeciesBox.Text.All(char.IsLetter))
+            if (!SpeciesBox.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
             {
                 var error = new Error("A species name must only contain letters.");
                 error.ShowDialog();
@@ -102,7 +123,11 @@ namespace WoodWorking
                 double.TryParse(textBox4.Text, out temp) &&
                 double.TryParse(textBox5.Text, out temp) &&
                 double.TryParse(RadialChangeBox.Text, out temp) &&
-                double.TryParse(TangentialChangeBox.Text, out temp));
+                double.TryParse(TangentialChangeBox.Text, out temp) &&
+                double.TryParse(EdgeBox.Text, out temp) &&
+                double.TryParse(FlatBox.Text, out temp) &&
+                double.TryParse(SGBox.Text, out temp) &&
+                double.TryParse(ElasticityBox.Text, out temp));
         }
 
         private void EnableEdits()
@@ -117,6 +142,10 @@ namespace WoodWorking
             TangentialChangeBox.Enabled = true;
             RadialChangeBox.Enabled = true;
             comboBox1.Enabled = true;
+            SGBox.Enabled = true;
+            ElasticityBox.Enabled = true;
+            EdgeBox.Enabled = true;
+            FlatBox.Enabled = true;
             EditButton.Visible = false;
             DeleteButton.Visible = false;
             CalculationsButton.Visible = false;
@@ -134,6 +163,10 @@ namespace WoodWorking
             RadialChangeBox.Enabled = false;
             TangentialChangeBox.Enabled = false;
             comboBox1.Enabled = false;
+            SGBox.Enabled = false;
+            ElasticityBox.Enabled = false;
+            FlatBox.Enabled = false;
+            EdgeBox.Enabled = false;
             EditButton.Visible = true;
             DeleteButton.Visible = true;
             CalculationsButton.Visible = true;

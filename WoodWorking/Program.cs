@@ -258,8 +258,7 @@ namespace WoodWorking
                     {
                         editSpecies.ModulusOfElasticity = double.Parse(words[words.Length - 19]);
                         editSpecies.SpecificGravityAtGreen = double.Parse(words[words.Length - 21]);
-                        if (words[words.Length - 10] != "-")
-                            editSpecies.SpecificGravityAt12 = double.Parse(words[words.Length - 10]);
+                        
                     }
                 }
 
