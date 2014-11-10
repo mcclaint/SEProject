@@ -9,7 +9,7 @@ namespace WoodWorking
     public static class Program
     {
         public static List<Species> SpeciesList;
-        public static Form1 StartForm;
+        public static StartForm StartForm;
 
         [STAThread]
         static void Main()
@@ -27,7 +27,7 @@ namespace WoodWorking
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            StartForm = new Form1();
+            StartForm = new StartForm();
             Application.Run(StartForm);
         }
 
