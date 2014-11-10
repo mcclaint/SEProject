@@ -46,7 +46,7 @@ namespace WoodWorking
 
         private void SaveSpecies(object sender, EventArgs e)
         {
-            if (!validateSave())
+            if (!ValidateSave())
             {
                 ErrorLabel.Visible = true;
                 return;
@@ -83,7 +83,7 @@ namespace WoodWorking
             DisableEdits();
         }
 
-        private bool validateSave()
+        private bool ValidateSave()
         {
             double temp;
 
