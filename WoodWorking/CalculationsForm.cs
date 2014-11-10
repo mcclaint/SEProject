@@ -22,6 +22,18 @@ namespace WoodWorking
             double.TryParse(initialMoistureBox.Text, out initialMoisture);
             double.TryParse(finalMoistureBox.Text, out finalMoisture);
 
+            if (Species.EdgeShearModulus == 0)
+            {
+                var errorBox = new Error("The edge shear modulus is zero for this species.");
+                errorBox.ShowDialog();
+            }
+
+            if (Species.FlatShearModulus == 0)
+            {
+                var errorBox = new Error("The flat shear modulus is zero for this species.");
+                errorBox.ShowDialog();
+            }
+
             try
             {
                 radialChangeBox.Text =

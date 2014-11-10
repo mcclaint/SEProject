@@ -42,10 +42,16 @@
             this.initialMoistureBox = new System.Windows.Forms.TextBox();
             this.CalculateButton = new System.Windows.Forms.Button();
             this.DensityPage = new System.Windows.Forms.TabPage();
+            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.DensityLevel = new System.Windows.Forms.Label();
+            this.DensityLabel = new System.Windows.Forms.Label();
+            this.CalculateDensityButton = new System.Windows.Forms.Button();
             this.MoistureLevel = new System.Windows.Forms.Label();
             this.MoistureLabel = new System.Windows.Forms.Label();
             this.MoistureBar = new System.Windows.Forms.VScrollBar();
             this.DeflectionsTab = new System.Windows.Forms.TabPage();
+            this.LoadBox = new System.Windows.Forms.TextBox();
+            this.LoadLabel = new System.Windows.Forms.Label();
             this.CalculateDeflectionsButton = new System.Windows.Forms.Button();
             this.EdgeResultBox = new System.Windows.Forms.TextBox();
             this.FlatResultBox = new System.Windows.Forms.TextBox();
@@ -57,12 +63,6 @@
             this.SpanBox = new System.Windows.Forms.TextBox();
             this.HeightBox = new System.Windows.Forms.TextBox();
             this.WidthBox = new System.Windows.Forms.TextBox();
-            this.CalculateDensityButton = new System.Windows.Forms.Button();
-            this.DensityLabel = new System.Windows.Forms.Label();
-            this.DensityLevel = new System.Windows.Forms.Label();
-            this.ErrorLabel = new System.Windows.Forms.Label();
-            this.LoadLabel = new System.Windows.Forms.Label();
-            this.LoadBox = new System.Windows.Forms.TextBox();
             this.CalculationTabs.SuspendLayout();
             this.DimensionalTab.SuspendLayout();
             this.DensityPage.SuspendLayout();
@@ -189,7 +189,7 @@
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(146, 41);
             this.CalculateButton.TabIndex = 11;
-            this.CalculateButton.Text = "Do The Magic";
+            this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
             this.CalculateButton.Click += new System.EventHandler(this.DoDimensionChangeCalculations);
             // 
@@ -209,6 +209,48 @@
             this.DensityPage.TabIndex = 1;
             this.DensityPage.Text = "Density";
             this.DensityPage.UseVisualStyleBackColor = true;
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.ErrorLabel.Location = new System.Drawing.Point(137, 61);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(591, 20);
+            this.ErrorLabel.TabIndex = 6;
+            this.ErrorLabel.Text = "This species has no data for specific gravity. Therefore, no calculation can be d" +
+    "one.";
+            this.ErrorLabel.Visible = false;
+            // 
+            // DensityLevel
+            // 
+            this.DensityLevel.AutoSize = true;
+            this.DensityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DensityLevel.Location = new System.Drawing.Point(625, 217);
+            this.DensityLevel.Name = "DensityLevel";
+            this.DensityLevel.Size = new System.Drawing.Size(26, 29);
+            this.DensityLevel.TabIndex = 5;
+            this.DensityLevel.Text = "0";
+            // 
+            // DensityLabel
+            // 
+            this.DensityLabel.AutoSize = true;
+            this.DensityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DensityLabel.Location = new System.Drawing.Point(552, 158);
+            this.DensityLabel.Name = "DensityLabel";
+            this.DensityLabel.Size = new System.Drawing.Size(194, 29);
+            this.DensityLabel.TabIndex = 4;
+            this.DensityLabel.Text = "Density (lb/ft^3)";
+            // 
+            // CalculateDensityButton
+            // 
+            this.CalculateDensityButton.Location = new System.Drawing.Point(386, 372);
+            this.CalculateDensityButton.Name = "CalculateDensityButton";
+            this.CalculateDensityButton.Size = new System.Drawing.Size(97, 35);
+            this.CalculateDensityButton.TabIndex = 3;
+            this.CalculateDensityButton.Text = "Calculate";
+            this.CalculateDensityButton.UseVisualStyleBackColor = true;
+            this.CalculateDensityButton.Click += new System.EventHandler(this.CalculateDensity);
             // 
             // MoistureLevel
             // 
@@ -261,6 +303,22 @@
             this.DeflectionsTab.TabIndex = 2;
             this.DeflectionsTab.Text = "Deflections";
             this.DeflectionsTab.UseVisualStyleBackColor = true;
+            // 
+            // LoadBox
+            // 
+            this.LoadBox.Location = new System.Drawing.Point(444, 47);
+            this.LoadBox.Name = "LoadBox";
+            this.LoadBox.Size = new System.Drawing.Size(100, 26);
+            this.LoadBox.TabIndex = 12;
+            // 
+            // LoadLabel
+            // 
+            this.LoadLabel.AutoSize = true;
+            this.LoadLabel.Location = new System.Drawing.Point(305, 53);
+            this.LoadLabel.Name = "LoadLabel";
+            this.LoadLabel.Size = new System.Drawing.Size(125, 20);
+            this.LoadLabel.TabIndex = 11;
+            this.LoadLabel.Text = "Load Weight (lb)";
             // 
             // CalculateDeflectionsButton
             // 
@@ -351,64 +409,6 @@
             this.WidthBox.Name = "WidthBox";
             this.WidthBox.Size = new System.Drawing.Size(100, 26);
             this.WidthBox.TabIndex = 0;
-            // 
-            // CalculateDensityButton
-            // 
-            this.CalculateDensityButton.Location = new System.Drawing.Point(386, 372);
-            this.CalculateDensityButton.Name = "CalculateDensityButton";
-            this.CalculateDensityButton.Size = new System.Drawing.Size(97, 35);
-            this.CalculateDensityButton.TabIndex = 3;
-            this.CalculateDensityButton.Text = "Calculate";
-            this.CalculateDensityButton.UseVisualStyleBackColor = true;
-            this.CalculateDensityButton.Click += new System.EventHandler(this.CalculateDensity);
-            // 
-            // DensityLabel
-            // 
-            this.DensityLabel.AutoSize = true;
-            this.DensityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DensityLabel.Location = new System.Drawing.Point(552, 158);
-            this.DensityLabel.Name = "DensityLabel";
-            this.DensityLabel.Size = new System.Drawing.Size(194, 29);
-            this.DensityLabel.TabIndex = 4;
-            this.DensityLabel.Text = "Density (lb/ft^3)";
-            // 
-            // DensityLevel
-            // 
-            this.DensityLevel.AutoSize = true;
-            this.DensityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DensityLevel.Location = new System.Drawing.Point(625, 217);
-            this.DensityLevel.Name = "DensityLevel";
-            this.DensityLevel.Size = new System.Drawing.Size(26, 29);
-            this.DensityLevel.TabIndex = 5;
-            this.DensityLevel.Text = "0";
-            // 
-            // ErrorLabel
-            // 
-            this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.ErrorLabel.Location = new System.Drawing.Point(137, 61);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(591, 20);
-            this.ErrorLabel.TabIndex = 6;
-            this.ErrorLabel.Text = "This species has no data for specific gravity. Therefore, no calculation can be d" +
-    "one.";
-            this.ErrorLabel.Visible = false;
-            // 
-            // LoadLabel
-            // 
-            this.LoadLabel.AutoSize = true;
-            this.LoadLabel.Location = new System.Drawing.Point(305, 53);
-            this.LoadLabel.Name = "LoadLabel";
-            this.LoadLabel.Size = new System.Drawing.Size(125, 20);
-            this.LoadLabel.TabIndex = 11;
-            this.LoadLabel.Text = "Load Weight (lb)";
-            // 
-            // LoadBox
-            // 
-            this.LoadBox.Location = new System.Drawing.Point(444, 47);
-            this.LoadBox.Name = "LoadBox";
-            this.LoadBox.Size = new System.Drawing.Size(100, 26);
-            this.LoadBox.TabIndex = 12;
             // 
             // CalculationsForm
             // 

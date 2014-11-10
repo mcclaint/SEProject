@@ -63,7 +63,7 @@ namespace WoodWorking
         public double CalculateDeflectionForEdge(double width, double height, double span, double load)
         {
             double modifiedArea = ((double)5 / (double)6) * width * height;
-            double intertia = width * height * height * height / 12;
+            double intertia = width * height * height * height / (Double)12;
 
             double kb = ((double)1 / (double)48);
             double ks = .25;
@@ -77,7 +77,7 @@ namespace WoodWorking
         public double CalculateDeflectionForFlat(double width, double height, double span, double load)
         {
             double modifiedArea = ((double)5 / (double)6) * width * height;
-            double intertia = width * height * height * height / 12;
+            double intertia = width * height * height * height / (double)12;
 
             double kb = ((double)1 / (double)48);
             double ks = .25;

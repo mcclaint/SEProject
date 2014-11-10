@@ -157,6 +157,7 @@
             this.SpeciesBox.Enabled = false;
             this.SpeciesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.SpeciesBox.Location = new System.Drawing.Point(12, 12);
+            this.SpeciesBox.MaxLength = 120;
             this.SpeciesBox.Name = "SpeciesBox";
             this.SpeciesBox.Size = new System.Drawing.Size(358, 39);
             this.SpeciesBox.TabIndex = 19;

@@ -85,6 +85,13 @@ namespace WoodWorking
 
         private bool ValidateSave()
         {
+            if (!SpeciesBox.Text.All(char.IsLetter))
+            {
+                var error = new Error("A species name must only contain letters.");
+                error.ShowDialog();
+                return false;
+            }
+
             double temp;
 
             return (
