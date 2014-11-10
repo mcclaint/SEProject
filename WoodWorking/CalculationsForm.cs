@@ -22,17 +22,7 @@ namespace WoodWorking
             double.TryParse(initialMoistureBox.Text, out initialMoisture);
             double.TryParse(finalMoistureBox.Text, out finalMoisture);
 
-            if (Species.EdgeShearModulus == 0)
-            {
-                var errorBox = new Error("The edge shear modulus is zero for this species.");
-                errorBox.ShowDialog();
-            }
-
-            if (Species.FlatShearModulus == 0)
-            {
-                var errorBox = new Error("The flat shear modulus is zero for this species.");
-                errorBox.ShowDialog();
-            }
+            CheckForDimentionalZeros();
 
             try
             {
@@ -71,6 +61,8 @@ namespace WoodWorking
             double load; 
             double.TryParse(LoadBox.Text, out load);
 
+            CheckForDeflectionZeros();
+
             try
             {
                 FlatResultBox.Text = Species.CalculateDeflectionForFlat(width,height,span,load).ToString("N2");
@@ -108,6 +100,36 @@ namespace WoodWorking
 
             var density = Species.GetDensityAtMoistureContent(double.Parse(MoistureLevel.Text));
             DensityLevel.Text = density.ToString("N2");
+        }
+
+        private void CheckForDimentionalZeros()
+        {
+            if (Species.TangentialChangeCoefficient == 0)
+            {
+                var errorBox = new Error("The tangential coefficient is zero for this species.");
+                errorBox.ShowDialog();
+            }
+
+            if (Species.RadialChangeCoefficient == 0)
+            {
+                var errorBox = new Error("The radial coefficient is zero for this species.");
+                errorBox.ShowDialog();
+            }
+        }
+
+        private void CheckForDeflectionZeros()
+        {
+            if (Species.EdgeShearModulus == 0)
+            {
+                var errorBox = new Error("The edge shear modulus is zero for this species.");
+                errorBox.ShowDialog();
+            }
+
+            if (Species.FlatShearModulus == 0)
+            {
+                var errorBox = new Error("The flat shear modulus is zero for this species.");
+                errorBox.ShowDialog();
+            }
         }
 
         private bool ValidateDensity()
