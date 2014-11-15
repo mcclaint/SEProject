@@ -307,9 +307,9 @@
             this.edgeLabel.Location = new System.Drawing.Point(729, 182);
             this.edgeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.edgeLabel.Name = "edgeLabel";
-            this.edgeLabel.Size = new System.Drawing.Size(193, 25);
+            this.edgeLabel.Size = new System.Drawing.Size(181, 25);
             this.edgeLabel.TabIndex = 31;
-            this.edgeLabel.Text = "Eadge Shear Ratio";
+            this.edgeLabel.Text = "Edge Shear Ratio";
             // 
             // label3
             // 
