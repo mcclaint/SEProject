@@ -50,6 +50,7 @@
     <Compile Include="CalculationsForm.Designer.cs">
       <DependentUpon>CalculationsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataManager.cs" />
     <Compile Include="DetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +63,7 @@
     <Compile Include="Error.Designer.cs">
       <DependentUpon>Error.cs</DependentUpon>
     </Compile>
+    <Compile Include="EWood.cs" />
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
     </Compile>

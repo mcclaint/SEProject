@@ -7,9 +7,11 @@ namespace WoodWorking
     public partial class VerifyDelete : Form
     {
         Species Species;
+        private DataManager Data;
 
-        public VerifyDelete(Species species)
+        internal VerifyDelete(Species species, DataManager data)
         {
+            Data = data;
             this.Species = species;
             InitializeComponent();
         }
@@ -21,11 +23,11 @@ namespace WoodWorking
 
         private void AcceptDelete(object sender, EventArgs e)
         {
-            if (Program.SpeciesList.Remove(Species))
+            if (Data.SpeciesList.Remove(Species))
             {
-                Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
-                Program.WriteSpecies();
-                Program.StartForm.RefreshSpecies();
+                Data.SpeciesList = Data.SpeciesList.OrderBy(s => s.Name).ToList();
+                Data.WriteSpecies();
+                EWood.StartForm.RefreshSpecies();
             }
             this.Close();
         }

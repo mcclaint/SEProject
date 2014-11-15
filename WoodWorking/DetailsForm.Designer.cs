@@ -130,7 +130,7 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(253, 132);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 30);
             this.textBox1.TabIndex = 13;
@@ -139,7 +139,7 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(473, 132);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 30);
             this.textBox2.TabIndex = 14;
@@ -148,7 +148,7 @@
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(248, 225);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(143, 30);
             this.textBox3.TabIndex = 15;
@@ -157,7 +157,7 @@
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(475, 225);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(143, 30);
             this.textBox4.TabIndex = 16;
@@ -166,7 +166,7 @@
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(248, 310);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(143, 30);
             this.textBox5.TabIndex = 17;
@@ -176,7 +176,7 @@
             this.SpeciesBox.Enabled = false;
             this.SpeciesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.SpeciesBox.Location = new System.Drawing.Point(17, 15);
-            this.SpeciesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SpeciesBox.Margin = new System.Windows.Forms.Padding(4);
             this.SpeciesBox.MaxLength = 120;
             this.SpeciesBox.Name = "SpeciesBox";
             this.SpeciesBox.Size = new System.Drawing.Size(515, 39);
@@ -186,7 +186,7 @@
             // EditButton
             // 
             this.EditButton.Location = new System.Drawing.Point(33, 274);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(163, 50);
             this.EditButton.TabIndex = 20;
@@ -197,7 +197,7 @@
             // SaveButton
             // 
             this.SaveButton.Location = new System.Drawing.Point(33, 398);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(163, 56);
             this.SaveButton.TabIndex = 21;
@@ -210,7 +210,7 @@
             this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(475, 310);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(206, 33);
             this.comboBox1.TabIndex = 22;
@@ -218,7 +218,7 @@
             // DeleteButton
             // 
             this.DeleteButton.Location = new System.Drawing.Point(33, 331);
-            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(163, 59);
             this.DeleteButton.TabIndex = 23;
@@ -229,7 +229,7 @@
             // CalculationsButton
             // 
             this.CalculationsButton.Location = new System.Drawing.Point(33, 214);
-            this.CalculationsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CalculationsButton.Margin = new System.Windows.Forms.Padding(4);
             this.CalculationsButton.Name = "CalculationsButton";
             this.CalculationsButton.Size = new System.Drawing.Size(163, 52);
             this.CalculationsButton.TabIndex = 24;
@@ -263,7 +263,7 @@
             // 
             this.RadialChangeBox.Enabled = false;
             this.RadialChangeBox.Location = new System.Drawing.Point(248, 401);
-            this.RadialChangeBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RadialChangeBox.Margin = new System.Windows.Forms.Padding(4);
             this.RadialChangeBox.Name = "RadialChangeBox";
             this.RadialChangeBox.Size = new System.Drawing.Size(143, 30);
             this.RadialChangeBox.TabIndex = 27;
@@ -272,7 +272,7 @@
             // 
             this.TangentialChangeBox.Enabled = false;
             this.TangentialChangeBox.Location = new System.Drawing.Point(475, 401);
-            this.TangentialChangeBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TangentialChangeBox.Margin = new System.Windows.Forms.Padding(4);
             this.TangentialChangeBox.Name = "TangentialChangeBox";
             this.TangentialChangeBox.Size = new System.Drawing.Size(143, 30);
             this.TangentialChangeBox.TabIndex = 28;
@@ -307,9 +307,9 @@
             this.edgeLabel.Location = new System.Drawing.Point(729, 182);
             this.edgeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.edgeLabel.Name = "edgeLabel";
-            this.edgeLabel.Size = new System.Drawing.Size(205, 25);
+            this.edgeLabel.Size = new System.Drawing.Size(193, 25);
             this.edgeLabel.TabIndex = 31;
-            this.edgeLabel.Text = "Eadge Shear Ration";
+            this.edgeLabel.Text = "Eadge Shear Ratio";
             // 
             // label3
             // 
@@ -398,7 +398,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DetailsForm";
             this.Text = "Details";
             this.ResumeLayout(false);

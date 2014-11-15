@@ -68,7 +68,7 @@ namespace WoodWorking
             double modifiedArea = ((double)5 / (double)6) * width * height;
             double intertia = width * height * height * height / (Double)12;
 
-            double kb = ((double)1 / (double)48);
+            double kb = ((double)1 / (double)192);
             double ks = .25;
 
             var firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
@@ -82,7 +82,7 @@ namespace WoodWorking
             double modifiedArea = ((double)5 / (double)6) * width * height;
             double intertia = width * height * height * height / (double)12;
 
-            double kb = ((double)1 / (double)48);
+            double kb = ((double)1 / (double)192);
             double ks = .25;
 
             var firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);

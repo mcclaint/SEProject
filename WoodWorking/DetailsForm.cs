@@ -6,11 +6,13 @@ namespace WoodWorking
 {
     public partial class DetailsForm : Form
     {
-        public Species Species;
-        public Species EditedSpecies;
+        internal Species Species;
+        internal Species EditedSpecies;
+        internal DataManager Data;
 
-        public DetailsForm(Species species)
+        internal DetailsForm(Species species, DataManager data)
         {
+            Data = data;
             InitializeComponent();
             comboBox1.DataSource = Enum.GetValues(typeof(NativeLocation));
 
@@ -59,20 +61,20 @@ namespace WoodWorking
             ErrorLabel.Visible = false;
 
             if (Species != null)
-                Program.SpeciesList.Remove(Species);
+                Data.SpeciesList.Remove(Species);
 
             if (CheckForDuplicateNames(SpeciesBox.Text))
             {
                 var error = new Error("A species with that name is already in the data file.");
                 error.ShowDialog();
-                Program.SpeciesList.Add(Species);
-                Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
-                Program.WriteSpecies();
-                Program.StartForm.RefreshSpecies();
+                Data.SpeciesList.Add(Species);
+                Data.SpeciesList = Data.SpeciesList.OrderBy(s => s.Name).ToList();
+                Data.WriteSpecies();
+                EWood.StartForm.RefreshSpecies();
 
                 Close();
             }
-
+            
             EditedSpecies = new Species
             {
                 Name = SpeciesBox.Text,
@@ -90,10 +92,10 @@ namespace WoodWorking
                 SpecificGravityAtGreen = double.Parse(SGBox.Text)
             };
 
-            Program.SpeciesList.Add(EditedSpecies);
-            Program.SpeciesList = Program.SpeciesList.OrderBy(s => s.Name).ToList();
-            Program.WriteSpecies();
-            Program.StartForm.RefreshSpecies();
+            Data.SpeciesList.Add(EditedSpecies);
+            Data.SpeciesList = Data.SpeciesList.OrderBy(s => s.Name).ToList();
+            Data.WriteSpecies();
+            EWood.StartForm.RefreshSpecies();
             Species = EditedSpecies;
 
             DisableEdits();
@@ -101,7 +103,7 @@ namespace WoodWorking
 
         private bool CheckForDuplicateNames(string name)
         {
-            return Program.SpeciesList.Any(s => s.Name.Equals(name));
+            return Data.SpeciesList.Any(s => s.Name.Equals(name));
         }
 
         private bool ValidateSave()
@@ -127,7 +129,8 @@ namespace WoodWorking
                 double.TryParse(EdgeBox.Text, out temp) &&
                 double.TryParse(FlatBox.Text, out temp) &&
                 double.TryParse(SGBox.Text, out temp) &&
-                double.TryParse(ElasticityBox.Text, out temp));
+                double.TryParse(ElasticityBox.Text, out temp) &&
+                comboBox1.SelectedItem != null);
         }
 
         private void EnableEdits()
@@ -174,8 +177,9 @@ namespace WoodWorking
 
         private void DeleteSpecies(object sender, EventArgs e)
         {
-            var deleteWindow = new VerifyDelete(Species);
+            var deleteWindow = new VerifyDelete(Species, Data);
             deleteWindow.ShowDialog();
+            Close();
         }
 
         private void ViewCalculations(object sender, EventArgs e)

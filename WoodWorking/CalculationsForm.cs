@@ -53,13 +53,25 @@ namespace WoodWorking
         private void CalculateDeflections(object sender, EventArgs e)
         {
             double width; 
-            double.TryParse(WidthBox.Text, out width);
             double height; 
-            double.TryParse(HeightBox.Text, out height);
             double span; 
-            double.TryParse(SpanBox.Text, out span);
-            double load; 
-            double.TryParse(LoadBox.Text, out load);
+            double load;
+
+            try
+            {
+                load = double.Parse(LoadBox.Text);
+                span = double.Parse(SpanBox.Text);
+                height = double.Parse(HeightBox.Text);
+                width = double.Parse(WidthBox.Text);
+            }
+            catch (Exception)
+            {
+                var errorBox = new Error("Entered values are not valid");
+                errorBox.ShowDialog();
+                FlatResultBox.Text = "";
+                EdgeResultBox.Text = "";
+                return;
+            }
 
             CheckForDeflectionZeros();
 
