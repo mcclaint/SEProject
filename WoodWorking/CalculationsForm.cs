@@ -18,9 +18,20 @@ namespace WoodWorking
             double initialMoisture;
             double finalMoisture;
 
-            double.TryParse(lengthBox.Text, out length);
-            double.TryParse(initialMoistureBox.Text, out initialMoisture);
-            double.TryParse(finalMoistureBox.Text, out finalMoisture);
+            try
+            {
+                length = double.Parse(lengthBox.Text);
+                initialMoisture = double.Parse(initialMoistureBox.Text);
+                finalMoisture = double.Parse(finalMoistureBox.Text);
+            }
+            catch (Exception)
+            {
+                var errorBox = new Error("Entered values are not valid.");
+                errorBox.ShowDialog();
+                radialChangeBox.Text = "";
+                tangentialChangeBox.Text = "";
+                return;
+            }
 
             CheckForDimentionalZeros();
 
@@ -47,7 +58,6 @@ namespace WoodWorking
                 errorBox.ShowDialog();
                 tangentialChangeBox.Text = "";
             }
-
         }
 
         private void CalculateDeflections(object sender, EventArgs e)
