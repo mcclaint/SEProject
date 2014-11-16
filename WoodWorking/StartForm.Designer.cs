@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.speciesBox = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,13 +54,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ViewClick);
             // 
-            // comboBox1
+            // speciesBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(114, 185);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 28);
-            this.comboBox1.TabIndex = 2;
+            this.speciesBox.FormattingEnabled = true;
+            this.speciesBox.Location = new System.Drawing.Point(114, 185);
+            this.speciesBox.Name = "speciesBox";
+            this.speciesBox.Size = new System.Drawing.Size(246, 28);
+            this.speciesBox.TabIndex = 2;
             // 
             // button2
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 459);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.speciesBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "StartForm";
@@ -92,7 +92,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox speciesBox;
         private System.Windows.Forms.Button button2;
     }
 }

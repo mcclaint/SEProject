@@ -5,7 +5,7 @@ namespace WoodWorking
 {
     public class EWood
     {
-        internal DataManager Data;
+        internal static DataManager Data;
         internal static StartForm StartForm;
 
         public EWood()
@@ -26,7 +26,7 @@ namespace WoodWorking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            StartForm = new StartForm(Data);
+            StartForm = new StartForm();
             Application.Run(StartForm);
         }
     }

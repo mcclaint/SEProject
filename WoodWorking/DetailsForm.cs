@@ -8,13 +8,11 @@ namespace WoodWorking
     {
         internal Species Species;
         internal Species EditedSpecies;
-        internal DataManager Data;
 
-        internal DetailsForm(Species species, DataManager data)
+        internal DetailsForm(Species species)
         {
-            Data = data;
             InitializeComponent();
-            comboBox1.DataSource = Enum.GetValues(typeof(NativeLocation));
+            locationBox.DataSource = Enum.GetValues(typeof(NativeLocation));
 
             if (species != null)
             {
@@ -31,7 +29,7 @@ namespace WoodWorking
                 ElasticityBox.Text = Species.ModulusOfElasticity.ToString();
                 EdgeBox.Text = Species.EdgeShearModulusRatio.ToString();
                 FlatBox.Text = Species.FlatShearModulusRatio.ToString();
-                comboBox1.SelectedItem = Enum.Parse(typeof(NativeLocation), Species.NativeLocation.ToString());
+                locationBox.SelectedItem = Enum.Parse(typeof(NativeLocation), Species.NativeLocation.ToString());
 
                 SaveButton.Visible = false;
             }
@@ -42,7 +40,6 @@ namespace WoodWorking
                 SpeciesBox.Text = "New Species";
                 EnableEdits();
             }
-            
         }
 
         private void EditSpecies(object sender, EventArgs e)
@@ -52,29 +49,27 @@ namespace WoodWorking
 
         private void SaveSpecies(object sender, EventArgs e)
         {
-            if (!ValidateSave())
-            {
-                ErrorLabel.Visible = true;
-                return;
-            }
-
+            #region validation
             ErrorLabel.Visible = false;
 
             if (Species != null)
-                Data.SpeciesList.Remove(Species);
+                EWood.Data.SpeciesList.Remove(Species);
 
-            if (CheckForDuplicateNames(SpeciesBox.Text))
+            if (!InputIsValidForSave())
             {
-                var error = new Error("A species with that name is already in the data file.");
-                error.ShowDialog();
-                Data.SpeciesList.Add(Species);
-                Data.SpeciesList = Data.SpeciesList.OrderBy(s => s.Name).ToList();
-                Data.WriteSpecies();
-                EWood.StartForm.RefreshSpecies();
+                ErrorLabel.Visible = true;
+                AddSpeciesToData(Species);
+                return;
+            }
 
+            if (DuplicateNamesExist(SpeciesBox.Text))
+            {
+                AddSpeciesToData(Species);
                 Close();
             }
-            
+
+            #endregion
+
             EditedSpecies = new Species
             {
                 Name = SpeciesBox.Text,
@@ -85,35 +80,43 @@ namespace WoodWorking
                 VolumetricShrinkage = double.Parse(textBox5.Text),
                 RadialChangeCoefficient = double.Parse(RadialChangeBox.Text),
                 TangentialChangeCoefficient = double.Parse(TangentialChangeBox.Text),
-                NativeLocation = (NativeLocation)comboBox1.SelectedItem,
+                NativeLocation = (NativeLocation)locationBox.SelectedItem,
                 EdgeShearModulusRatio = double.Parse(EdgeBox.Text),
                 FlatShearModulusRatio = double.Parse(FlatBox.Text),
                 ModulusOfElasticity = double.Parse(ElasticityBox.Text),
                 SpecificGravityAtGreen = double.Parse(SGBox.Text)
             };
 
-            Data.SpeciesList.Add(EditedSpecies);
-            Data.SpeciesList = Data.SpeciesList.OrderBy(s => s.Name).ToList();
-            Data.WriteSpecies();
-            EWood.StartForm.RefreshSpecies();
+            AddSpeciesToData(EditedSpecies);
             Species = EditedSpecies;
 
             DisableEdits();
         }
 
-        private bool CheckForDuplicateNames(string name)
+        private static void AddSpeciesToData(Species species)
         {
-            return Data.SpeciesList.Any(s => s.Name.Equals(name));
+            EWood.Data.SpeciesList.Add(species);
+            EWood.Data.SpeciesList = EWood.Data.SpeciesList.OrderBy(s => s.Name).ToList();
+            EWood.Data.WriteSpecies();
+            EWood.StartForm.RefreshSpecies();
         }
 
-        private bool ValidateSave()
+        private static bool DuplicateNamesExist(string name)
         {
-            if (!SpeciesBox.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c.Equals(',') || c.Equals('-')))
+            if (EWood.Data.SpeciesList.Any(s => s.Name.Equals(name)))
             {
-                var error = new Error("A species name must only contain letters.");
+                var error = new Error("A species with that name is already in the data file.");
                 error.ShowDialog();
-                return false;
+                return true;
             }
+
+            return false;
+        }
+
+        private bool InputIsValidForSave()
+        {
+            if (!NameIsValid())
+                return false;
 
             double temp;
 
@@ -130,7 +133,19 @@ namespace WoodWorking
                 double.TryParse(FlatBox.Text, out temp) &&
                 double.TryParse(SGBox.Text, out temp) &&
                 double.TryParse(ElasticityBox.Text, out temp) &&
-                comboBox1.SelectedItem != null);
+                locationBox.SelectedItem != null);
+        }
+
+        private bool NameIsValid()
+        {
+            if (!SpeciesBox.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c.Equals(',') || c.Equals('-')))
+            {
+                var error = new Error("A species name must only contain letters.");
+                error.ShowDialog();
+                return false;
+            }
+
+            return true;
         }
 
         private void EnableEdits()
@@ -144,7 +159,7 @@ namespace WoodWorking
             textBox5.Enabled = true;
             TangentialChangeBox.Enabled = true;
             RadialChangeBox.Enabled = true;
-            comboBox1.Enabled = true;
+            locationBox.Enabled = true;
             SGBox.Enabled = true;
             ElasticityBox.Enabled = true;
             EdgeBox.Enabled = true;
@@ -165,7 +180,7 @@ namespace WoodWorking
             textBox5.Enabled = false;
             RadialChangeBox.Enabled = false;
             TangentialChangeBox.Enabled = false;
-            comboBox1.Enabled = false;
+            locationBox.Enabled = false;
             SGBox.Enabled = false;
             ElasticityBox.Enabled = false;
             FlatBox.Enabled = false;
@@ -177,7 +192,7 @@ namespace WoodWorking
 
         private void DeleteSpecies(object sender, EventArgs e)
         {
-            var deleteWindow = new VerifyDelete(Species, Data);
+            var deleteWindow = new VerifyDelete(Species);
             deleteWindow.ShowDialog();
             Close();
         }

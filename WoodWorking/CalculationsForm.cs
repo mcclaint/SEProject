@@ -18,6 +18,7 @@ namespace WoodWorking
             double initialMoisture;
             double finalMoisture;
 
+            #region validation
             try
             {
                 length = double.Parse(lengthBox.Text);
@@ -34,6 +35,7 @@ namespace WoodWorking
             }
 
             CheckForDimentionalZeros();
+            #endregion
 
             try
             {
@@ -62,28 +64,17 @@ namespace WoodWorking
 
         private void CalculateDeflections(object sender, EventArgs e)
         {
-            double width; 
-            double height; 
-            double span; 
-            double load;
-
-            try
-            {
-                load = double.Parse(LoadBox.Text);
-                span = double.Parse(SpanBox.Text);
-                height = double.Parse(HeightBox.Text);
-                width = double.Parse(WidthBox.Text);
-            }
-            catch (Exception)
-            {
-                var errorBox = new Error("Entered values are not valid");
-                errorBox.ShowDialog();
-                FlatResultBox.Text = "";
-                EdgeResultBox.Text = "";
+            #region validation
+            if (!DataIsValidForDeflection())
                 return;
-            }
 
             CheckForDeflectionZeros();
+            #endregion
+
+            var load = double.Parse(LoadBox.Text);
+            var span = double.Parse(SpanBox.Text);
+            var height = double.Parse(HeightBox.Text);
+            var width = double.Parse(WidthBox.Text);
 
             try
             {
@@ -114,11 +105,13 @@ namespace WoodWorking
 
         private void CalculateDensity(object sender, EventArgs e)
         {
+            #region validation
             if (!ValidateDensity())
             {
                 ErrorLabel.Visible = true;
                 return;
             }
+            #endregion
 
             var density = Species.GetDensityAtMoistureContent(double.Parse(MoistureLevel.Text));
             DensityLevel.Text = density.ToString("N2");
@@ -157,6 +150,22 @@ namespace WoodWorking
         private bool ValidateDensity()
         {
             return Species.SpecificGravityAtGreen > 0;
+        }
+
+        private bool DataIsValidForDeflection()
+        {
+            double trash;
+
+            if (double.TryParse(LoadBox.Text, out trash) && double.TryParse(HeightBox.Text, out trash) &&
+                double.TryParse(WidthBox.Text, out trash) && double.TryParse(SpanBox.Text, out trash))
+            {
+                var errorBox = new Error("Entered values are not valid");
+                errorBox.ShowDialog();
+                FlatResultBox.Text = "";
+                EdgeResultBox.Text = "";
+                return false;
+            }
+            return true;
         }
     }
 }

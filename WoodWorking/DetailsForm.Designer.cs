@@ -42,7 +42,7 @@
             this.SpeciesBox = new System.Windows.Forms.TextBox();
             this.EditButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.locationBox = new System.Windows.Forms.ComboBox();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.CalculationsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -205,15 +205,15 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveSpecies);
             // 
-            // comboBox1
+            // locationBox
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(475, 310);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 33);
-            this.comboBox1.TabIndex = 22;
+            this.locationBox.Enabled = false;
+            this.locationBox.FormattingEnabled = true;
+            this.locationBox.Location = new System.Drawing.Point(475, 310);
+            this.locationBox.Margin = new System.Windows.Forms.Padding(4);
+            this.locationBox.Name = "locationBox";
+            this.locationBox.Size = new System.Drawing.Size(206, 33);
+            this.locationBox.TabIndex = 22;
             // 
             // DeleteButton
             // 
@@ -382,7 +382,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CalculationsButton);
             this.Controls.Add(this.DeleteButton);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.locationBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.SpeciesBox);
@@ -422,7 +422,7 @@
         private System.Windows.Forms.TextBox SpeciesBox;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox locationBox;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button CalculationsButton;
         private System.Windows.Forms.Label label1;
