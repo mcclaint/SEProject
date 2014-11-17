@@ -12,7 +12,7 @@ namespace WoodWorking
             InitializeComponent();
         }
 
-        private void DoDimensionChangeCalculations(object sender, System.EventArgs e)
+        private void CalculateDimensionalChanges(object sender, System.EventArgs e)
         {
             #region validation
 
