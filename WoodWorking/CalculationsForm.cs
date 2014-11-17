@@ -14,28 +14,17 @@ namespace WoodWorking
 
         private void DoDimensionChangeCalculations(object sender, System.EventArgs e)
         {
-            double length;
-            double initialMoisture;
-            double finalMoisture;
-
             #region validation
-            try
-            {
-                length = double.Parse(lengthBox.Text);
-                initialMoisture = double.Parse(initialMoistureBox.Text);
-                finalMoisture = double.Parse(finalMoistureBox.Text);
-            }
-            catch (Exception)
-            {
-                var errorBox = new Error("Entered values are not valid.");
-                errorBox.ShowDialog();
-                radialChangeBox.Text = "";
-                tangentialChangeBox.Text = "";
+
+            if (!DataIsValidForDimensionalChange())
                 return;
-            }
 
             CheckForDimentionalZeros();
             #endregion
+
+            var length = double.Parse(lengthBox.Text);
+            var initialMoisture = double.Parse(initialMoistureBox.Text);
+            var finalMoisture = double.Parse(finalMoistureBox.Text);
 
             try
             {
@@ -65,6 +54,7 @@ namespace WoodWorking
         private void CalculateDeflections(object sender, EventArgs e)
         {
             #region validation
+
             if (!DataIsValidForDeflection())
                 return;
 
@@ -156,8 +146,8 @@ namespace WoodWorking
         {
             double trash;
 
-            if (double.TryParse(LoadBox.Text, out trash) && double.TryParse(HeightBox.Text, out trash) &&
-                double.TryParse(WidthBox.Text, out trash) && double.TryParse(SpanBox.Text, out trash))
+            if (!(double.TryParse(LoadBox.Text, out trash) && double.TryParse(HeightBox.Text, out trash) &&
+                double.TryParse(WidthBox.Text, out trash) && double.TryParse(SpanBox.Text, out trash)))
             {
                 var errorBox = new Error("Entered values are not valid");
                 errorBox.ShowDialog();
@@ -165,6 +155,25 @@ namespace WoodWorking
                 EdgeResultBox.Text = "";
                 return false;
             }
+
+            return true;
+        }
+
+        private bool DataIsValidForDimensionalChange()
+        {
+            double trash;
+
+            if (!(double.TryParse(lengthBox.Text, out trash) &&
+                double.TryParse(initialMoistureBox.Text, out trash) &&
+                double.TryParse(finalMoistureBox.Text, out trash)))
+            {
+                var errorBox = new Error("Entered values are not valid.");
+                errorBox.ShowDialog();
+                radialChangeBox.Text = "";
+                tangentialChangeBox.Text = "";
+                return false;
+            }
+
             return true;
         }
     }
