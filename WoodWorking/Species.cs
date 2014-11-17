@@ -67,28 +67,28 @@ namespace WoodWorking
 
         public double CalculateDeflectionForEdge(double width, double height, double span, double load)
         {
-            double modifiedArea = ((double)5 / (double)6) * width * height;
-            double intertia = width * height * height * height / (Double)12;
+            double modifiedArea = (5.0 / 6.0) * width * height;
+            double intertia = width * height * height * height / 12.0;
 
-            double kb = ((double)1 / (double)192);
+            double kb = (1.0 / 192.0);
             double ks = .25;
 
-            var firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
-            var secondBlock = (ks * load * span) / (EdgeShearModulus * modifiedArea);
+            double firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
+            double secondBlock = (ks * load * span) / (EdgeShearModulus * modifiedArea);
 
             return firstBlock + secondBlock;
         }
 
         public double CalculateDeflectionForFlat(double width, double height, double span, double load)
         {
-            double modifiedArea = ((double)5 / (double)6) * width * height;
-            double intertia = width * height * height * height / (double)12;
+            double modifiedArea = (5.0 / 6.0) * width * height;
+            double intertia = width * height * height * height / 12.0;
 
-            double kb = ((double)1 / (double)192);
+            double kb = (1.0 / 192.0);
             double ks = .25;
 
-            var firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
-            var secondBlock = (ks * load * span) / (FlatShearModulus * modifiedArea);
+            double firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
+            double secondBlock = (ks * load * span) / (FlatShearModulus * modifiedArea);
 
             return firstBlock + secondBlock;
         }
