@@ -16,6 +16,7 @@ namespace WoodWorking
         public double SpecificGravityAtGreen { get; internal set; }
         public double FlatShearModulusRatio { get; internal set; }
         public double EdgeShearModulusRatio { get; internal set; }
+
         public double EdgeShearModulus {
             get { return EdgeShearModulusRatio*(ModulusOfElasticity + ModulusOfElasticity*.1); }
         }
@@ -23,6 +24,7 @@ namespace WoodWorking
         public double FlatShearModulus {
             get { return FlatShearModulusRatio*(ModulusOfElasticity + ModulusOfElasticity*.1); }
         }
+
         public NativeLocation NativeLocation { get; internal set; }
 
         public bool Equals(Species other)
