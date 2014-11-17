@@ -46,7 +46,7 @@
             this.ClientSize = new System.Drawing.Size(484, 264);
             this.Controls.Add(this.label1);
             this.Name = "Error";
-            this.Text = "FileUploadError";
+            this.Text = "Error";
             this.ResumeLayout(false);
             this.PerformLayout();
 
