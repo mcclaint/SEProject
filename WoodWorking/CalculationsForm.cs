@@ -107,6 +107,8 @@ namespace WoodWorking
             DensityLevel.Text = density.ToString("N2");
         }
 
+        #region Validation Methods
+
         private void CheckForDimentionalZeros()
         {
             if (Species.TangentialChangeCoefficient == 0)
@@ -176,5 +178,6 @@ namespace WoodWorking
 
             return true;
         }
+        #endregion
     }
 }

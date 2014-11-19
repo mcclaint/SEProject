@@ -73,7 +73,7 @@ namespace WoodWorking
             double kb = (1.0 / 192.0);
             double ks = .25;
 
-            double firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
+            double firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * 1000000 * intertia);
             double secondBlock = (ks * load * span) / (EdgeShearModulus * modifiedArea);
 
             return firstBlock + secondBlock;
@@ -87,7 +87,7 @@ namespace WoodWorking
             double kb = (1.0 / 192.0);
             double ks = .25;
 
-            double firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * intertia);
+            double firstBlock = (kb * load * span * span * span) / (ModulusOfElasticity * 1000000 * intertia);
             double secondBlock = (ks * load * span) / (FlatShearModulus * modifiedArea);
 
             return firstBlock + secondBlock;

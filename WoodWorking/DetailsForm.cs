@@ -93,59 +93,11 @@ namespace WoodWorking
             DisableEdits();
         }
 
-        private static void AddSpeciesToData(Species species)
+        private void DeleteSpecies(object sender, EventArgs e)
         {
-            EWood.Data.SpeciesList.Add(species);
-            EWood.Data.SpeciesList = EWood.Data.SpeciesList.OrderBy(s => s.Name).ToList();
-            EWood.Data.WriteSpecies();
-            EWood.StartForm.RefreshSpecies();
-        }
-
-        private static bool DuplicateNamesExist(string name)
-        {
-            if (EWood.Data.SpeciesList.Any(s => s.Name.Equals(name)))
-            {
-                var error = new Error("A species with that name is already in the data file.");
-                error.ShowDialog();
-                return true;
-            }
-
-            return false;
-        }
-
-        private bool InputIsValidForSave()
-        {
-            if (!NameIsValid())
-                return false;
-
-            double temp;
-
-            return (
-                !string.IsNullOrEmpty(SpeciesBox.Text)&&
-                double.TryParse(textBox1.Text, out temp) &&
-                double.TryParse(textBox2.Text, out temp) &&
-                double.TryParse(textBox3.Text, out temp) &&
-                double.TryParse(textBox4.Text, out temp) &&
-                double.TryParse(textBox5.Text, out temp) &&
-                double.TryParse(RadialChangeBox.Text, out temp) &&
-                double.TryParse(TangentialChangeBox.Text, out temp) &&
-                double.TryParse(EdgeBox.Text, out temp) &&
-                double.TryParse(FlatBox.Text, out temp) &&
-                double.TryParse(SGBox.Text, out temp) &&
-                double.TryParse(ElasticityBox.Text, out temp) &&
-                locationBox.SelectedItem != null);
-        }
-
-        private bool NameIsValid()
-        {
-            if (!SpeciesBox.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c.Equals(',') || c.Equals('-')))
-            {
-                var error = new Error("A species name must only contain letters.");
-                error.ShowDialog();
-                return false;
-            }
-
-            return true;
+            var deleteWindow = new VerifyDelete(Species);
+            deleteWindow.ShowDialog();
+            Close();
         }
 
         private void EnableEdits()
@@ -190,13 +142,6 @@ namespace WoodWorking
             CalculationsButton.Visible = true;
         }
 
-        private void DeleteSpecies(object sender, EventArgs e)
-        {
-            var deleteWindow = new VerifyDelete(Species);
-            deleteWindow.ShowDialog();
-            Close();
-        }
-
         private void ViewCalculations(object sender, EventArgs e)
         {
             if (Species == null)
@@ -205,5 +150,63 @@ namespace WoodWorking
             var calcWindow = new CalculationsForm(Species);
             calcWindow.ShowDialog();
         }
+
+        private static void AddSpeciesToData(Species species)
+        {
+            EWood.Data.SpeciesList.Add(species);
+            EWood.Data.SpeciesList = EWood.Data.SpeciesList.OrderBy(s => s.Name).ToList();
+            EWood.Data.WriteSpecies();
+            EWood.StartForm.RefreshSpecies();
+        }
+
+        #region Validation Methods
+
+        private bool NameIsValid()
+        {
+            if (!SpeciesBox.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c.Equals(',') || c.Equals('-')))
+            {
+                var error = new Error("A species name must only contain letters.");
+                error.ShowDialog();
+                return false;
+            }
+
+            return true;
+        }
+
+        private static bool DuplicateNamesExist(string name)
+        {
+            if (EWood.Data.SpeciesList.Any(s => s.Name.Equals(name)))
+            {
+                var error = new Error("A species with that name is already in the data file.");
+                error.ShowDialog();
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool InputIsValidForSave()
+        {
+            if (!NameIsValid())
+                return false;
+
+            double temp;
+
+            return (
+                !string.IsNullOrEmpty(SpeciesBox.Text) &&
+                double.TryParse(textBox1.Text, out temp) &&
+                double.TryParse(textBox2.Text, out temp) &&
+                double.TryParse(textBox3.Text, out temp) &&
+                double.TryParse(textBox4.Text, out temp) &&
+                double.TryParse(textBox5.Text, out temp) &&
+                double.TryParse(RadialChangeBox.Text, out temp) &&
+                double.TryParse(TangentialChangeBox.Text, out temp) &&
+                double.TryParse(EdgeBox.Text, out temp) &&
+                double.TryParse(FlatBox.Text, out temp) &&
+                double.TryParse(SGBox.Text, out temp) &&
+                double.TryParse(ElasticityBox.Text, out temp) &&
+                locationBox.SelectedItem != null);
+        }
+        #endregion
     }
 }

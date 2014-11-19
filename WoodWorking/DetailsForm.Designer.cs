@@ -364,9 +364,8 @@
             // 
             // DetailsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 532);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(966, 526);
             this.Controls.Add(this.ElasticityBox);
             this.Controls.Add(this.FlatBox);
             this.Controls.Add(this.EdgeBox);
