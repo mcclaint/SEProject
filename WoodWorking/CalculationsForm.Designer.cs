@@ -45,7 +45,6 @@
             this.ErrorLabel = new System.Windows.Forms.Label();
             this.DensityLevel = new System.Windows.Forms.Label();
             this.DensityLabel = new System.Windows.Forms.Label();
-            this.CalculateDensityButton = new System.Windows.Forms.Button();
             this.MoistureLevel = new System.Windows.Forms.Label();
             this.MoistureLabel = new System.Windows.Forms.Label();
             this.MoistureBar = new System.Windows.Forms.VScrollBar();
@@ -98,7 +97,7 @@
             this.DimensionalTab.Padding = new System.Windows.Forms.Padding(3);
             this.DimensionalTab.Size = new System.Drawing.Size(841, 484);
             this.DimensionalTab.TabIndex = 0;
-            this.DimensionalTab.Text = "Dimensional Δ";
+            this.DimensionalTab.Text = "Dimensional Change";
             this.DimensionalTab.UseVisualStyleBackColor = true;
             // 
             // tangentialChangeBox
@@ -147,9 +146,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(155, 280);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Initial Length (ft)";
+            this.label3.Text = "Width (ft)";
             // 
             // finalMoistureBox
             // 
@@ -198,7 +197,6 @@
             this.DensityPage.Controls.Add(this.ErrorLabel);
             this.DensityPage.Controls.Add(this.DensityLevel);
             this.DensityPage.Controls.Add(this.DensityLabel);
-            this.DensityPage.Controls.Add(this.CalculateDensityButton);
             this.DensityPage.Controls.Add(this.MoistureLevel);
             this.DensityPage.Controls.Add(this.MoistureLabel);
             this.DensityPage.Controls.Add(this.MoistureBar);
@@ -242,21 +240,11 @@
             this.DensityLabel.TabIndex = 4;
             this.DensityLabel.Text = "Density (lb/ft^3)";
             // 
-            // CalculateDensityButton
-            // 
-            this.CalculateDensityButton.Location = new System.Drawing.Point(386, 372);
-            this.CalculateDensityButton.Name = "CalculateDensityButton";
-            this.CalculateDensityButton.Size = new System.Drawing.Size(97, 35);
-            this.CalculateDensityButton.TabIndex = 3;
-            this.CalculateDensityButton.Text = "Calculate";
-            this.CalculateDensityButton.UseVisualStyleBackColor = true;
-            this.CalculateDensityButton.Click += new System.EventHandler(this.CalculateDensity);
-            // 
             // MoistureLevel
             // 
             this.MoistureLevel.AutoSize = true;
             this.MoistureLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoistureLevel.Location = new System.Drawing.Point(212, 217);
+            this.MoistureLevel.Location = new System.Drawing.Point(235, 217);
             this.MoistureLevel.Name = "MoistureLevel";
             this.MoistureLevel.Size = new System.Drawing.Size(41, 29);
             this.MoistureLevel.TabIndex = 2;
@@ -265,9 +253,10 @@
             // MoistureLabel
             // 
             this.MoistureLabel.AutoSize = true;
+            this.MoistureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.MoistureLabel.Location = new System.Drawing.Point(194, 144);
             this.MoistureLabel.Name = "MoistureLabel";
-            this.MoistureLabel.Size = new System.Drawing.Size(88, 20);
+            this.MoistureLabel.Size = new System.Drawing.Size(144, 29);
             this.MoistureLabel.TabIndex = 1;
             this.MoistureLabel.Text = "Moisture %";
             // 
@@ -332,6 +321,7 @@
             // 
             // EdgeResultBox
             // 
+            this.EdgeResultBox.Enabled = false;
             this.EdgeResultBox.Location = new System.Drawing.Point(580, 276);
             this.EdgeResultBox.Name = "EdgeResultBox";
             this.EdgeResultBox.Size = new System.Drawing.Size(100, 26);
@@ -339,6 +329,7 @@
             // 
             // FlatResultBox
             // 
+            this.FlatResultBox.Enabled = false;
             this.FlatResultBox.Location = new System.Drawing.Point(580, 174);
             this.FlatResultBox.Name = "FlatResultBox";
             this.FlatResultBox.Size = new System.Drawing.Size(100, 26);
@@ -461,7 +452,6 @@
         private System.Windows.Forms.Label MoistureLevel;
         private System.Windows.Forms.Label MoistureLabel;
         private System.Windows.Forms.VScrollBar MoistureBar;
-        private System.Windows.Forms.Button CalculateDensityButton;
         private System.Windows.Forms.Label DensityLevel;
         private System.Windows.Forms.Label DensityLabel;
         private System.Windows.Forms.Label ErrorLabel;

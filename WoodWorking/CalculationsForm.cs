@@ -10,6 +10,8 @@ namespace WoodWorking
         {
             Species = species;
             InitializeComponent();
+
+            CalculateDensity();
         }
 
         private void CalculateDimensionalChanges(object sender, System.EventArgs e)
@@ -91,9 +93,11 @@ namespace WoodWorking
         private void UpdateMoistureLabel(object sender, EventArgs e)
         {
             MoistureLevel.Text = MoistureBar.Value.ToString();
+
+            CalculateDensity();
         }
 
-        private void CalculateDensity(object sender, EventArgs e)
+        private void CalculateDensity()
         {
             #region validation
             if (!ValidateDensity())

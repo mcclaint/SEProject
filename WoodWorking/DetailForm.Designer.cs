@@ -62,7 +62,7 @@
             // ElasticityBox
             // 
             this.ElasticityBox.Enabled = false;
-            this.ElasticityBox.Location = new System.Drawing.Point(778, 450);
+            this.ElasticityBox.Location = new System.Drawing.Point(810, 394);
             this.ElasticityBox.Name = "ElasticityBox";
             this.ElasticityBox.Size = new System.Drawing.Size(100, 26);
             this.ElasticityBox.TabIndex = 68;
@@ -70,7 +70,7 @@
             // FlatBox
             // 
             this.FlatBox.Enabled = false;
-            this.FlatBox.Location = new System.Drawing.Point(778, 362);
+            this.FlatBox.Location = new System.Drawing.Point(810, 349);
             this.FlatBox.Name = "FlatBox";
             this.FlatBox.Size = new System.Drawing.Size(100, 26);
             this.FlatBox.TabIndex = 67;
@@ -78,7 +78,7 @@
             // EdgeBox
             // 
             this.EdgeBox.Enabled = false;
-            this.EdgeBox.Location = new System.Drawing.Point(778, 275);
+            this.EdgeBox.Location = new System.Drawing.Point(810, 300);
             this.EdgeBox.Name = "EdgeBox";
             this.EdgeBox.Size = new System.Drawing.Size(100, 26);
             this.EdgeBox.TabIndex = 66;
@@ -86,7 +86,7 @@
             // SGBox
             // 
             this.SGBox.Enabled = false;
-            this.SGBox.Location = new System.Drawing.Point(778, 181);
+            this.SGBox.Location = new System.Drawing.Point(810, 232);
             this.SGBox.Name = "SGBox";
             this.SGBox.Size = new System.Drawing.Size(100, 26);
             this.SGBox.TabIndex = 65;
@@ -94,19 +94,21 @@
             // elasticityLabel
             // 
             this.elasticityLabel.AutoSize = true;
-            this.elasticityLabel.Location = new System.Drawing.Point(773, 414);
+            this.elasticityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.elasticityLabel.Location = new System.Drawing.Point(594, 393);
             this.elasticityLabel.Name = "elasticityLabel";
-            this.elasticityLabel.Size = new System.Drawing.Size(153, 20);
+            this.elasticityLabel.Size = new System.Drawing.Size(210, 25);
             this.elasticityLabel.TabIndex = 64;
             this.elasticityLabel.Text = "Modulus of Elasticity";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(773, 324);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(594, 348);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 20);
+            this.label3.Size = new System.Drawing.Size(167, 25);
             this.label3.TabIndex = 63;
             this.label3.Text = "Flat Shear Ratio";
             // 
@@ -114,7 +116,7 @@
             // 
             this.edgeLabel.AutoSize = true;
             this.edgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edgeLabel.Location = new System.Drawing.Point(773, 231);
+            this.edgeLabel.Location = new System.Drawing.Point(594, 299);
             this.edgeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.edgeLabel.Name = "edgeLabel";
             this.edgeLabel.Size = new System.Drawing.Size(181, 25);
@@ -125,7 +127,7 @@
             // 
             this.SGLabel.AutoSize = true;
             this.SGLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SGLabel.Location = new System.Drawing.Point(773, 129);
+            this.SGLabel.Location = new System.Drawing.Point(594, 231);
             this.SGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SGLabel.Name = "SGLabel";
             this.SGLabel.Size = new System.Drawing.Size(163, 25);
@@ -136,7 +138,7 @@
             // 
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.ErrorLabel.Location = new System.Drawing.Point(260, 515);
+            this.ErrorLabel.Location = new System.Drawing.Point(308, 539);
             this.ErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(401, 20);
@@ -147,7 +149,7 @@
             // TangentialChangeBox
             // 
             this.TangentialChangeBox.Enabled = false;
-            this.TangentialChangeBox.Location = new System.Drawing.Point(519, 450);
+            this.TangentialChangeBox.Location = new System.Drawing.Point(390, 448);
             this.TangentialChangeBox.Margin = new System.Windows.Forms.Padding(4);
             this.TangentialChangeBox.Name = "TangentialChangeBox";
             this.TangentialChangeBox.Size = new System.Drawing.Size(143, 26);
@@ -156,7 +158,7 @@
             // RadialChangeBox
             // 
             this.RadialChangeBox.Enabled = false;
-            this.RadialChangeBox.Location = new System.Drawing.Point(292, 450);
+            this.RadialChangeBox.Location = new System.Drawing.Point(390, 405);
             this.RadialChangeBox.Margin = new System.Windows.Forms.Padding(4);
             this.RadialChangeBox.Name = "RadialChangeBox";
             this.RadialChangeBox.Size = new System.Drawing.Size(143, 26);
@@ -166,7 +168,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(519, 414);
+            this.label2.Location = new System.Drawing.Point(178, 449);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 25);
@@ -177,7 +179,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 414);
+            this.label1.Location = new System.Drawing.Point(178, 405);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 25);
@@ -186,10 +188,10 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(77, 380);
+            this.DeleteButton.Location = new System.Drawing.Point(13, 264);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(163, 59);
+            this.DeleteButton.Size = new System.Drawing.Size(125, 49);
             this.DeleteButton.TabIndex = 54;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -199,7 +201,7 @@
             // 
             this.locationBox.Enabled = false;
             this.locationBox.FormattingEnabled = true;
-            this.locationBox.Location = new System.Drawing.Point(519, 359);
+            this.locationBox.Location = new System.Drawing.Point(763, 147);
             this.locationBox.Margin = new System.Windows.Forms.Padding(4);
             this.locationBox.Name = "locationBox";
             this.locationBox.Size = new System.Drawing.Size(206, 28);
@@ -208,10 +210,10 @@
             // SaveButton
             // 
             this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveButton.Location = new System.Drawing.Point(77, 447);
+            this.SaveButton.Location = new System.Drawing.Point(13, 324);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(163, 56);
+            this.SaveButton.Size = new System.Drawing.Size(125, 49);
             this.SaveButton.TabIndex = 52;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -219,10 +221,10 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(77, 323);
+            this.EditButton.Location = new System.Drawing.Point(13, 207);
             this.EditButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(163, 50);
+            this.EditButton.Size = new System.Drawing.Size(125, 49);
             this.EditButton.TabIndex = 51;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -232,7 +234,7 @@
             // 
             this.SpeciesBox.Enabled = false;
             this.SpeciesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.SpeciesBox.Location = new System.Drawing.Point(61, 64);
+            this.SpeciesBox.Location = new System.Drawing.Point(48, 34);
             this.SpeciesBox.Margin = new System.Windows.Forms.Padding(4);
             this.SpeciesBox.MaxLength = 120;
             this.SpeciesBox.Name = "SpeciesBox";
@@ -243,7 +245,7 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(292, 359);
+            this.textBox5.Location = new System.Drawing.Point(390, 314);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(143, 26);
@@ -252,7 +254,7 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(519, 274);
+            this.textBox4.Location = new System.Drawing.Point(390, 232);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(143, 26);
@@ -261,7 +263,7 @@
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(292, 274);
+            this.textBox3.Location = new System.Drawing.Point(390, 276);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(143, 26);
@@ -270,7 +272,7 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(517, 181);
+            this.textBox2.Location = new System.Drawing.Point(390, 151);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 26);
@@ -279,7 +281,7 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(297, 181);
+            this.textBox1.Location = new System.Drawing.Point(390, 111);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 26);
@@ -289,7 +291,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(511, 324);
+            this.label13.Location = new System.Drawing.Point(594, 150);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(161, 25);
@@ -300,7 +302,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(285, 324);
+            this.label12.Location = new System.Drawing.Point(178, 313);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(182, 25);
@@ -311,7 +313,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(511, 231);
+            this.label11.Location = new System.Drawing.Point(178, 231);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(182, 25);
@@ -322,7 +324,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(285, 231);
+            this.label10.Location = new System.Drawing.Point(178, 275);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(140, 25);
@@ -333,23 +335,23 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(511, 129);
+            this.label9.Location = new System.Drawing.Point(178, 150);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 25);
+            this.label9.Size = new System.Drawing.Size(191, 25);
             this.label9.TabIndex = 40;
-            this.label9.Text = "SW Moisture";
+            this.label9.Text = "Sapwood Moisture";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(290, 129);
+            this.label8.Location = new System.Drawing.Point(178, 110);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 25);
+            this.label8.Size = new System.Drawing.Size(204, 25);
             this.label8.TabIndex = 39;
-            this.label8.Text = "HW Moisture";
+            this.label8.Text = "Heartwood Moisture";
             // 
             // DetailForm
             // 
