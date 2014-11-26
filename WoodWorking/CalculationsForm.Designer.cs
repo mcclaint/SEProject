@@ -62,6 +62,7 @@
             this.SpanBox = new System.Windows.Forms.TextBox();
             this.HeightBox = new System.Windows.Forms.TextBox();
             this.WidthBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.CalculationTabs.SuspendLayout();
             this.DimensionalTab.SuspendLayout();
             this.DensityPage.SuspendLayout();
@@ -194,6 +195,7 @@
             // 
             // DensityPage
             // 
+            this.DensityPage.Controls.Add(this.label7);
             this.DensityPage.Controls.Add(this.ErrorLabel);
             this.DensityPage.Controls.Add(this.DensityLevel);
             this.DensityPage.Controls.Add(this.DensityLabel);
@@ -224,7 +226,7 @@
             // 
             this.DensityLevel.AutoSize = true;
             this.DensityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DensityLevel.Location = new System.Drawing.Point(625, 217);
+            this.DensityLevel.Location = new System.Drawing.Point(584, 217);
             this.DensityLevel.Name = "DensityLevel";
             this.DensityLevel.Size = new System.Drawing.Size(26, 29);
             this.DensityLevel.TabIndex = 5;
@@ -234,11 +236,11 @@
             // 
             this.DensityLabel.AutoSize = true;
             this.DensityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DensityLabel.Location = new System.Drawing.Point(552, 158);
+            this.DensityLabel.Location = new System.Drawing.Point(584, 169);
             this.DensityLabel.Name = "DensityLabel";
-            this.DensityLabel.Size = new System.Drawing.Size(194, 29);
+            this.DensityLabel.Size = new System.Drawing.Size(99, 29);
             this.DensityLabel.TabIndex = 4;
-            this.DensityLabel.Text = "Density (lb/ft^3)";
+            this.DensityLabel.Text = "Density";
             // 
             // MoistureLevel
             // 
@@ -254,7 +256,7 @@
             // 
             this.MoistureLabel.AutoSize = true;
             this.MoistureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.MoistureLabel.Location = new System.Drawing.Point(194, 144);
+            this.MoistureLabel.Location = new System.Drawing.Point(194, 169);
             this.MoistureLabel.Name = "MoistureLabel";
             this.MoistureLabel.Size = new System.Drawing.Size(144, 29);
             this.MoistureLabel.TabIndex = 1;
@@ -340,18 +342,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(539, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(192, 20);
+            this.label6.Size = new System.Drawing.Size(202, 20);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Deflection with edge grain";
+            this.label6.Text = "Deflection With Edge Grain";
             // 
             // FlatResultLabel
             // 
             this.FlatResultLabel.AutoSize = true;
             this.FlatResultLabel.Location = new System.Drawing.Point(535, 131);
             this.FlatResultLabel.Name = "FlatResultLabel";
-            this.FlatResultLabel.Size = new System.Drawing.Size(178, 20);
+            this.FlatResultLabel.Size = new System.Drawing.Size(191, 20);
             this.FlatResultLabel.TabIndex = 6;
-            this.FlatResultLabel.Text = "Deflection with flat grain";
+            this.FlatResultLabel.Text = "Deflection With Flat Grain";
             // 
             // SpanLabel
             // 
@@ -400,6 +402,15 @@
             this.WidthBox.Name = "WidthBox";
             this.WidthBox.Size = new System.Drawing.Size(100, 26);
             this.WidthBox.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(651, 224);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(129, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "lbs per cubic foot";
             // 
             // CalculationsForm
             // 
@@ -457,6 +468,7 @@
         private System.Windows.Forms.Label ErrorLabel;
         private System.Windows.Forms.TextBox LoadBox;
         private System.Windows.Forms.Label LoadLabel;
+        private System.Windows.Forms.Label label7;
 
     }
 }
