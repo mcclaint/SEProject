@@ -41,7 +41,6 @@
             this.RadialChangeBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CalculationsButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.locationBox = new System.Windows.Forms.ComboBox();
             this.SaveButton = new System.Windows.Forms.Button();
@@ -184,17 +183,6 @@
             this.label1.Size = new System.Drawing.Size(154, 25);
             this.label1.TabIndex = 56;
             this.label1.Text = "Radial Change";
-            // 
-            // CalculationsButton
-            // 
-            this.CalculationsButton.Location = new System.Drawing.Point(77, 263);
-            this.CalculationsButton.Margin = new System.Windows.Forms.Padding(4);
-            this.CalculationsButton.Name = "CalculationsButton";
-            this.CalculationsButton.Size = new System.Drawing.Size(163, 52);
-            this.CalculationsButton.TabIndex = 55;
-            this.CalculationsButton.Text = "Calculations";
-            this.CalculationsButton.UseVisualStyleBackColor = true;
-            this.CalculationsButton.Click += new System.EventHandler(this.ViewCalculations);
             // 
             // DeleteButton
             // 
@@ -381,7 +369,6 @@
             this.Controls.Add(this.RadialChangeBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CalculationsButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.locationBox);
             this.Controls.Add(this.SaveButton);
@@ -421,7 +408,6 @@
         private System.Windows.Forms.TextBox RadialChangeBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button CalculationsButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.ComboBox locationBox;
         private System.Windows.Forms.Button SaveButton;

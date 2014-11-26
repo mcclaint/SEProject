@@ -118,7 +118,6 @@ namespace WoodWorking
             FlatBox.Enabled = true;
             EditButton.Visible = false;
             DeleteButton.Visible = false;
-            CalculationsButton.Visible = false;
         }
 
         private void DisableEdits()
@@ -139,16 +138,6 @@ namespace WoodWorking
             EdgeBox.Enabled = false;
             EditButton.Visible = true;
             DeleteButton.Visible = true;
-            CalculationsButton.Visible = true;
-        }
-
-        private void ViewCalculations(object sender, EventArgs e)
-        {
-            if (Species == null)
-                return;
-
-            var calcWindow = new CalculationsForm(Species);
-            calcWindow.ShowDialog();
         }
 
         private static void AddSpeciesToData(Species species)
