@@ -219,6 +219,7 @@
             // 
             // SaveButton
             // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Location = new System.Drawing.Point(77, 447);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
@@ -398,6 +399,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Name = "DetailForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetailForm";
             this.ResumeLayout(false);
             this.PerformLayout();

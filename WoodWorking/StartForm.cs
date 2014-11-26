@@ -31,6 +31,15 @@ namespace WoodWorking
             //newSpecies.ShowDialog();
         }
 
+        private void ViewCalculations(object sender, EventArgs e)
+        {
+            if ((Species)speciesBox.SelectedItem == null)
+                return;
+
+            var calcWindow = new CalculationsForm((Species)speciesBox.SelectedItem);
+            calcWindow.ShowDialog();
+        }
+
         public void RefreshSpecies()
         {
             speciesBox.SelectedIndex = 0;

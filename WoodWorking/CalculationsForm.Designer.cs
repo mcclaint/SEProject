@@ -417,6 +417,7 @@
             this.ClientSize = new System.Drawing.Size(847, 517);
             this.Controls.Add(this.CalculationTabs);
             this.Name = "CalculationsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CalculationsForm";
             this.CalculationTabs.ResumeLayout(false);
             this.DimensionalTab.ResumeLayout(false);
