@@ -15,14 +15,20 @@ namespace WoodWorking
 
         private void ViewClick(object sender, EventArgs e)
         {
-            var details = new DetailsForm((Species)speciesBox.SelectedItem);
+            var details = new DetailForm((Species)speciesBox.SelectedItem);
             details.ShowDialog();
+
+           // var details = new DetailsForm((Species)speciesBox.SelectedItem);
+            //details.ShowDialog();
         }
 
         private void CreateNewSpecies(object sender, EventArgs e)
         {
-            var newSpecies = new DetailsForm(null);
+            var newSpecies = new DetailForm(null);
             newSpecies.ShowDialog();
+
+            //var newSpecies = new DetailsForm(null);
+            //newSpecies.ShowDialog();
         }
 
         public void RefreshSpecies()
