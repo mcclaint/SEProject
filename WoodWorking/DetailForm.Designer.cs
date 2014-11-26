@@ -50,23 +50,29 @@
             this.RadialChangeBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.SGBox = new System.Windows.Forms.TextBox();
-            this.SGLabel = new System.Windows.Forms.Label();
-            this.locationBox = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.ElasticityBox = new System.Windows.Forms.TextBox();
-            this.elasticityLabel = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.FlatBox = new System.Windows.Forms.TextBox();
             this.EdgeBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.edgeLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ElasticityBox = new System.Windows.Forms.TextBox();
+            this.elasticityLabel = new System.Windows.Forms.Label();
+            this.SGBox = new System.Windows.Forms.TextBox();
+            this.SGLabel = new System.Windows.Forms.Label();
+            this.locationBox = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // ErrorLabel
@@ -86,7 +92,7 @@
             this.DeleteButton.Location = new System.Drawing.Point(13, 264);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(125, 49);
+            this.DeleteButton.Size = new System.Drawing.Size(116, 49);
             this.DeleteButton.TabIndex = 54;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -98,7 +104,7 @@
             this.SaveButton.Location = new System.Drawing.Point(13, 324);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(125, 49);
+            this.SaveButton.Size = new System.Drawing.Size(116, 49);
             this.SaveButton.TabIndex = 52;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -109,7 +115,7 @@
             this.EditButton.Location = new System.Drawing.Point(13, 207);
             this.EditButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(125, 49);
+            this.EditButton.Size = new System.Drawing.Size(116, 49);
             this.EditButton.TabIndex = 51;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -129,13 +135,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(172, 103);
+            this.groupBox1.Location = new System.Drawing.Point(150, 103);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 109);
+            this.groupBox1.Size = new System.Drawing.Size(395, 109);
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Handbook Table 3 : 3";
@@ -182,15 +190,18 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(172, 242);
+            this.groupBox2.Location = new System.Drawing.Point(150, 235);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(391, 155);
+            this.groupBox2.Size = new System.Drawing.Size(395, 155);
             this.groupBox2.TabIndex = 70;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Handbook Table 3 : 5-6";
@@ -261,9 +272,9 @@
             this.groupBox3.Controls.Add(this.RadialChangeBox);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(172, 417);
+            this.groupBox3.Location = new System.Drawing.Point(150, 416);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(391, 120);
+            this.groupBox3.Size = new System.Drawing.Size(395, 120);
             this.groupBox3.TabIndex = 71;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Handbook Table 12 : 5";
@@ -308,96 +319,23 @@
             this.label1.TabIndex = 60;
             this.label1.Text = "Radial Change";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.ElasticityBox);
-            this.groupBox4.Controls.Add(this.elasticityLabel);
-            this.groupBox4.Controls.Add(this.SGBox);
-            this.groupBox4.Controls.Add(this.SGLabel);
-            this.groupBox4.Controls.Add(this.locationBox);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Location = new System.Drawing.Point(599, 103);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(392, 166);
-            this.groupBox4.TabIndex = 72;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Workbook Table 4 : 3b";
-            // 
-            // SGBox
-            // 
-            this.SGBox.Enabled = false;
-            this.SGBox.Location = new System.Drawing.Point(223, 80);
-            this.SGBox.Name = "SGBox";
-            this.SGBox.Size = new System.Drawing.Size(100, 26);
-            this.SGBox.TabIndex = 69;
-            // 
-            // SGLabel
-            // 
-            this.SGLabel.AutoSize = true;
-            this.SGLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SGLabel.Location = new System.Drawing.Point(7, 81);
-            this.SGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.SGLabel.Name = "SGLabel";
-            this.SGLabel.Size = new System.Drawing.Size(163, 25);
-            this.SGLabel.TabIndex = 68;
-            this.SGLabel.Text = "Specific Gravity";
-            // 
-            // locationBox
-            // 
-            this.locationBox.Enabled = false;
-            this.locationBox.FormattingEnabled = true;
-            this.locationBox.Location = new System.Drawing.Point(223, 30);
-            this.locationBox.Margin = new System.Windows.Forms.Padding(4);
-            this.locationBox.Name = "locationBox";
-            this.locationBox.Size = new System.Drawing.Size(159, 28);
-            this.locationBox.TabIndex = 67;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(7, 33);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(161, 25);
-            this.label13.TabIndex = 66;
-            this.label13.Text = "Native Location";
-            // 
-            // ElasticityBox
-            // 
-            this.ElasticityBox.Enabled = false;
-            this.ElasticityBox.Location = new System.Drawing.Point(223, 129);
-            this.ElasticityBox.Name = "ElasticityBox";
-            this.ElasticityBox.Size = new System.Drawing.Size(100, 26);
-            this.ElasticityBox.TabIndex = 71;
-            // 
-            // elasticityLabel
-            // 
-            this.elasticityLabel.AutoSize = true;
-            this.elasticityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.elasticityLabel.Location = new System.Drawing.Point(7, 128);
-            this.elasticityLabel.Name = "elasticityLabel";
-            this.elasticityLabel.Size = new System.Drawing.Size(210, 25);
-            this.elasticityLabel.TabIndex = 70;
-            this.elasticityLabel.Text = "Modulus of Elasticity";
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.FlatBox);
             this.groupBox5.Controls.Add(this.EdgeBox);
             this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Controls.Add(this.edgeLabel);
-            this.groupBox5.Location = new System.Drawing.Point(599, 308);
+            this.groupBox5.Location = new System.Drawing.Point(576, 103);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(392, 142);
+            this.groupBox5.Size = new System.Drawing.Size(426, 142);
             this.groupBox5.TabIndex = 73;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Workbook Table 4 : 1";
+            this.groupBox5.Text = "Handbook Table 4 : 1";
             // 
             // FlatBox
             // 
             this.FlatBox.Enabled = false;
-            this.FlatBox.Location = new System.Drawing.Point(223, 86);
+            this.FlatBox.Location = new System.Drawing.Point(240, 84);
             this.FlatBox.Name = "FlatBox";
             this.FlatBox.Size = new System.Drawing.Size(100, 26);
             this.FlatBox.TabIndex = 71;
@@ -405,7 +343,7 @@
             // EdgeBox
             // 
             this.EdgeBox.Enabled = false;
-            this.EdgeBox.Location = new System.Drawing.Point(223, 37);
+            this.EdgeBox.Location = new System.Drawing.Point(240, 35);
             this.EdgeBox.Name = "EdgeBox";
             this.EdgeBox.Size = new System.Drawing.Size(100, 26);
             this.EdgeBox.TabIndex = 70;
@@ -432,13 +370,141 @@
             this.edgeLabel.TabIndex = 68;
             this.edgeLabel.Text = "Edge Shear Ratio";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(370, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 20);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "%";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(369, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 20);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "%";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(366, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 20);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "%";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(366, 119);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(23, 20);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "%";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(366, 81);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 20);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "%";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.ElasticityBox);
+            this.groupBox4.Controls.Add(this.elasticityLabel);
+            this.groupBox4.Controls.Add(this.SGBox);
+            this.groupBox4.Controls.Add(this.SGLabel);
+            this.groupBox4.Controls.Add(this.locationBox);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Location = new System.Drawing.Point(576, 310);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(426, 166);
+            this.groupBox4.TabIndex = 74;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Handbook Table 4 : 3b";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(346, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 20);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "10⁶ lbf/in²";
+            // 
+            // ElasticityBox
+            // 
+            this.ElasticityBox.Enabled = false;
+            this.ElasticityBox.Location = new System.Drawing.Point(240, 127);
+            this.ElasticityBox.Name = "ElasticityBox";
+            this.ElasticityBox.Size = new System.Drawing.Size(100, 26);
+            this.ElasticityBox.TabIndex = 71;
+            // 
+            // elasticityLabel
+            // 
+            this.elasticityLabel.AutoSize = true;
+            this.elasticityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.elasticityLabel.Location = new System.Drawing.Point(6, 128);
+            this.elasticityLabel.Name = "elasticityLabel";
+            this.elasticityLabel.Size = new System.Drawing.Size(210, 25);
+            this.elasticityLabel.TabIndex = 70;
+            this.elasticityLabel.Text = "Modulus of Elasticity";
+            // 
+            // SGBox
+            // 
+            this.SGBox.Enabled = false;
+            this.SGBox.Location = new System.Drawing.Point(240, 80);
+            this.SGBox.Name = "SGBox";
+            this.SGBox.Size = new System.Drawing.Size(100, 26);
+            this.SGBox.TabIndex = 69;
+            // 
+            // SGLabel
+            // 
+            this.SGLabel.AutoSize = true;
+            this.SGLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SGLabel.Location = new System.Drawing.Point(7, 81);
+            this.SGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SGLabel.Name = "SGLabel";
+            this.SGLabel.Size = new System.Drawing.Size(163, 25);
+            this.SGLabel.TabIndex = 68;
+            this.SGLabel.Text = "Specific Gravity";
+            // 
+            // locationBox
+            // 
+            this.locationBox.Enabled = false;
+            this.locationBox.FormattingEnabled = true;
+            this.locationBox.Location = new System.Drawing.Point(240, 30);
+            this.locationBox.Margin = new System.Windows.Forms.Padding(4);
+            this.locationBox.Name = "locationBox";
+            this.locationBox.Size = new System.Drawing.Size(159, 28);
+            this.locationBox.TabIndex = 67;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(7, 33);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(161, 25);
+            this.label13.TabIndex = 66;
+            this.label13.Text = "Native Location";
+            // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 598);
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -456,10 +522,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,17 +555,23 @@
         private System.Windows.Forms.TextBox RadialChangeBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox FlatBox;
+        private System.Windows.Forms.TextBox EdgeBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label edgeLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox ElasticityBox;
         private System.Windows.Forms.Label elasticityLabel;
         private System.Windows.Forms.TextBox SGBox;
         private System.Windows.Forms.Label SGLabel;
         private System.Windows.Forms.ComboBox locationBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox FlatBox;
-        private System.Windows.Forms.TextBox EdgeBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label edgeLabel;
     }
 }
