@@ -57,12 +57,6 @@
     <Compile Include="DetailForm.Designer.cs">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetailsForm.Designer.cs">
-      <DependentUpon>DetailsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Error.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,9 +84,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetailsForm.resx">
-      <DependentUpon>DetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Error.resx">
       <DependentUpon>Error.cs</DependentUpon>

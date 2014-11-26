@@ -17,18 +17,12 @@ namespace WoodWorking
         {
             var details = new DetailForm((Species)speciesBox.SelectedItem);
             details.ShowDialog();
-
-           // var details = new DetailsForm((Species)speciesBox.SelectedItem);
-            //details.ShowDialog();
         }
 
         private void CreateNewSpecies(object sender, EventArgs e)
         {
             var newSpecies = new DetailForm(null);
             newSpecies.ShowDialog();
-
-            //var newSpecies = new DetailsForm(null);
-            //newSpecies.ShowDialog();
         }
 
         private void ViewCalculations(object sender, EventArgs e)
