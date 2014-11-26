@@ -79,12 +79,13 @@
             // 
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.ErrorLabel.Location = new System.Drawing.Point(314, 559);
+            this.ErrorLabel.Location = new System.Drawing.Point(170, 569);
             this.ErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(401, 20);
+            this.ErrorLabel.Size = new System.Drawing.Size(691, 20);
             this.ErrorLabel.TabIndex = 60;
-            this.ErrorLabel.Text = "This species did not save. There is an error on the page.";
+            this.ErrorLabel.Text = "This species did not save because there is an error on the page. If a value is no" +
+    "t known, input a 0.";
             this.ErrorLabel.Visible = false;
             // 
             // DeleteButton

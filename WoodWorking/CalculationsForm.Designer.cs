@@ -66,11 +66,23 @@
             this.inchRadio = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.feetRadio = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.widthInchRadio = new System.Windows.Forms.RadioButton();
+            this.widthFeetRadio = new System.Windows.Forms.RadioButton();
+            this.heightInchRadio = new System.Windows.Forms.RadioButton();
+            this.heightFeetRadio = new System.Windows.Forms.RadioButton();
+            this.spanInchRadio = new System.Windows.Forms.RadioButton();
+            this.spanFeetRadio = new System.Windows.Forms.RadioButton();
             this.CalculationTabs.SuspendLayout();
             this.DimensionalTab.SuspendLayout();
             this.DensityPage.SuspendLayout();
             this.DeflectionsTab.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // CalculationTabs
@@ -281,6 +293,9 @@
             // 
             // DeflectionsTab
             // 
+            this.DeflectionsTab.Controls.Add(this.panel5);
+            this.DeflectionsTab.Controls.Add(this.panel3);
+            this.DeflectionsTab.Controls.Add(this.panel2);
             this.DeflectionsTab.Controls.Add(this.LoadBox);
             this.DeflectionsTab.Controls.Add(this.LoadLabel);
             this.DeflectionsTab.Controls.Add(this.CalculateDeflectionsButton);
@@ -304,7 +319,7 @@
             // 
             // LoadBox
             // 
-            this.LoadBox.Location = new System.Drawing.Point(444, 47);
+            this.LoadBox.Location = new System.Drawing.Point(268, 65);
             this.LoadBox.Name = "LoadBox";
             this.LoadBox.Size = new System.Drawing.Size(100, 26);
             this.LoadBox.TabIndex = 12;
@@ -312,7 +327,7 @@
             // LoadLabel
             // 
             this.LoadLabel.AutoSize = true;
-            this.LoadLabel.Location = new System.Drawing.Point(305, 53);
+            this.LoadLabel.Location = new System.Drawing.Point(120, 68);
             this.LoadLabel.Name = "LoadLabel";
             this.LoadLabel.Size = new System.Drawing.Size(125, 20);
             this.LoadLabel.TabIndex = 11;
@@ -320,7 +335,7 @@
             // 
             // CalculateDeflectionsButton
             // 
-            this.CalculateDeflectionsButton.Location = new System.Drawing.Point(372, 338);
+            this.CalculateDeflectionsButton.Location = new System.Drawing.Point(369, 375);
             this.CalculateDeflectionsButton.Name = "CalculateDeflectionsButton";
             this.CalculateDeflectionsButton.Size = new System.Drawing.Size(103, 39);
             this.CalculateDeflectionsButton.TabIndex = 10;
@@ -331,7 +346,7 @@
             // EdgeResultBox
             // 
             this.EdgeResultBox.Enabled = false;
-            this.EdgeResultBox.Location = new System.Drawing.Point(580, 276);
+            this.EdgeResultBox.Location = new System.Drawing.Point(705, 269);
             this.EdgeResultBox.Name = "EdgeResultBox";
             this.EdgeResultBox.Size = new System.Drawing.Size(100, 26);
             this.EdgeResultBox.TabIndex = 9;
@@ -339,7 +354,7 @@
             // FlatResultBox
             // 
             this.FlatResultBox.Enabled = false;
-            this.FlatResultBox.Location = new System.Drawing.Point(580, 174);
+            this.FlatResultBox.Location = new System.Drawing.Point(705, 167);
             this.FlatResultBox.Name = "FlatResultBox";
             this.FlatResultBox.Size = new System.Drawing.Size(100, 26);
             this.FlatResultBox.TabIndex = 8;
@@ -347,65 +362,65 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(539, 234);
+            this.label6.Location = new System.Drawing.Point(414, 272);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(202, 20);
+            this.label6.Size = new System.Drawing.Size(270, 20);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Deflection With Edge Grain";
+            this.label6.Text = "Deflection With Edge Grain ( inches )";
             // 
             // FlatResultLabel
             // 
             this.FlatResultLabel.AutoSize = true;
-            this.FlatResultLabel.Location = new System.Drawing.Point(535, 131);
+            this.FlatResultLabel.Location = new System.Drawing.Point(414, 170);
             this.FlatResultLabel.Name = "FlatResultLabel";
-            this.FlatResultLabel.Size = new System.Drawing.Size(191, 20);
+            this.FlatResultLabel.Size = new System.Drawing.Size(259, 20);
             this.FlatResultLabel.TabIndex = 6;
-            this.FlatResultLabel.Text = "Deflection With Flat Grain";
+            this.FlatResultLabel.Text = "Deflection With Flat Grain ( inches )";
             // 
             // SpanLabel
             // 
             this.SpanLabel.AutoSize = true;
-            this.SpanLabel.Location = new System.Drawing.Point(66, 276);
+            this.SpanLabel.Location = new System.Drawing.Point(72, 312);
             this.SpanLabel.Name = "SpanLabel";
-            this.SpanLabel.Size = new System.Drawing.Size(117, 20);
+            this.SpanLabel.Size = new System.Drawing.Size(93, 20);
             this.SpanLabel.TabIndex = 5;
-            this.SpanLabel.Text = "Beam Span (ft)";
+            this.SpanLabel.Text = "Beam Span";
             // 
             // HeightLabel
             // 
             this.HeightLabel.AutoSize = true;
-            this.HeightLabel.Location = new System.Drawing.Point(66, 192);
+            this.HeightLabel.Location = new System.Drawing.Point(63, 231);
             this.HeightLabel.Name = "HeightLabel";
-            this.HeightLabel.Size = new System.Drawing.Size(126, 20);
+            this.HeightLabel.Size = new System.Drawing.Size(102, 20);
             this.HeightLabel.TabIndex = 4;
-            this.HeightLabel.Text = "Beam Height (ft)";
+            this.HeightLabel.Text = "Beam Height";
             // 
             // WidthLabel
             // 
             this.WidthLabel.AutoSize = true;
-            this.WidthLabel.Location = new System.Drawing.Point(62, 108);
+            this.WidthLabel.Location = new System.Drawing.Point(69, 144);
             this.WidthLabel.Name = "WidthLabel";
-            this.WidthLabel.Size = new System.Drawing.Size(120, 20);
+            this.WidthLabel.Size = new System.Drawing.Size(96, 20);
             this.WidthLabel.TabIndex = 3;
-            this.WidthLabel.Text = "Beam Width (ft)";
+            this.WidthLabel.Text = "Beam Width";
             // 
             // SpanBox
             // 
-            this.SpanBox.Location = new System.Drawing.Point(206, 273);
+            this.SpanBox.Location = new System.Drawing.Point(268, 309);
             this.SpanBox.Name = "SpanBox";
             this.SpanBox.Size = new System.Drawing.Size(100, 26);
             this.SpanBox.TabIndex = 2;
             // 
             // HeightBox
             // 
-            this.HeightBox.Location = new System.Drawing.Point(206, 186);
+            this.HeightBox.Location = new System.Drawing.Point(268, 228);
             this.HeightBox.Name = "HeightBox";
             this.HeightBox.Size = new System.Drawing.Size(100, 26);
             this.HeightBox.TabIndex = 1;
             // 
             // WidthBox
             // 
-            this.WidthBox.Location = new System.Drawing.Point(206, 105);
+            this.WidthBox.Location = new System.Drawing.Point(268, 141);
             this.WidthBox.Name = "WidthBox";
             this.WidthBox.Size = new System.Drawing.Size(100, 26);
             this.WidthBox.TabIndex = 0;
@@ -451,6 +466,99 @@
             this.feetRadio.Text = "ft";
             this.feetRadio.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.widthFeetRadio);
+            this.panel2.Controls.Add(this.widthInchRadio);
+            this.panel2.Location = new System.Drawing.Point(178, 115);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(67, 75);
+            this.panel2.TabIndex = 13;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.heightFeetRadio);
+            this.panel3.Controls.Add(this.heightInchRadio);
+            this.panel3.Location = new System.Drawing.Point(178, 196);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(67, 82);
+            this.panel3.TabIndex = 14;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.spanFeetRadio);
+            this.panel5.Controls.Add(this.spanInchRadio);
+            this.panel5.Location = new System.Drawing.Point(178, 293);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(67, 69);
+            this.panel5.TabIndex = 16;
+            // 
+            // widthInchRadio
+            // 
+            this.widthInchRadio.AutoSize = true;
+            this.widthInchRadio.Checked = true;
+            this.widthInchRadio.Location = new System.Drawing.Point(4, 4);
+            this.widthInchRadio.Name = "widthInchRadio";
+            this.widthInchRadio.Size = new System.Drawing.Size(46, 24);
+            this.widthInchRadio.TabIndex = 0;
+            this.widthInchRadio.TabStop = true;
+            this.widthInchRadio.Text = "in";
+            this.widthInchRadio.UseVisualStyleBackColor = true;
+            // 
+            // widthFeetRadio
+            // 
+            this.widthFeetRadio.AutoSize = true;
+            this.widthFeetRadio.Location = new System.Drawing.Point(4, 35);
+            this.widthFeetRadio.Name = "widthFeetRadio";
+            this.widthFeetRadio.Size = new System.Drawing.Size(44, 24);
+            this.widthFeetRadio.TabIndex = 1;
+            this.widthFeetRadio.Text = "ft";
+            this.widthFeetRadio.UseVisualStyleBackColor = true;
+            // 
+            // heightInchRadio
+            // 
+            this.heightInchRadio.AutoSize = true;
+            this.heightInchRadio.Checked = true;
+            this.heightInchRadio.Location = new System.Drawing.Point(4, 17);
+            this.heightInchRadio.Name = "heightInchRadio";
+            this.heightInchRadio.Size = new System.Drawing.Size(46, 24);
+            this.heightInchRadio.TabIndex = 0;
+            this.heightInchRadio.TabStop = true;
+            this.heightInchRadio.Text = "in";
+            this.heightInchRadio.UseVisualStyleBackColor = true;
+            // 
+            // heightFeetRadio
+            // 
+            this.heightFeetRadio.AutoSize = true;
+            this.heightFeetRadio.Location = new System.Drawing.Point(4, 48);
+            this.heightFeetRadio.Name = "heightFeetRadio";
+            this.heightFeetRadio.Size = new System.Drawing.Size(44, 24);
+            this.heightFeetRadio.TabIndex = 1;
+            this.heightFeetRadio.Text = "ft";
+            this.heightFeetRadio.UseVisualStyleBackColor = true;
+            // 
+            // spanInchRadio
+            // 
+            this.spanInchRadio.AutoSize = true;
+            this.spanInchRadio.Location = new System.Drawing.Point(4, 4);
+            this.spanInchRadio.Name = "spanInchRadio";
+            this.spanInchRadio.Size = new System.Drawing.Size(46, 24);
+            this.spanInchRadio.TabIndex = 0;
+            this.spanInchRadio.Text = "in";
+            this.spanInchRadio.UseVisualStyleBackColor = true;
+            // 
+            // spanFeetRadio
+            // 
+            this.spanFeetRadio.AutoSize = true;
+            this.spanFeetRadio.Checked = true;
+            this.spanFeetRadio.Location = new System.Drawing.Point(4, 35);
+            this.spanFeetRadio.Name = "spanFeetRadio";
+            this.spanFeetRadio.Size = new System.Drawing.Size(44, 24);
+            this.spanFeetRadio.TabIndex = 1;
+            this.spanFeetRadio.TabStop = true;
+            this.spanFeetRadio.Text = "ft";
+            this.spanFeetRadio.UseVisualStyleBackColor = true;
+            // 
             // CalculationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -469,6 +577,12 @@
             this.DeflectionsTab.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -513,6 +627,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton feetRadio;
         private System.Windows.Forms.RadioButton inchRadio;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton spanFeetRadio;
+        private System.Windows.Forms.RadioButton spanInchRadio;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton heightFeetRadio;
+        private System.Windows.Forms.RadioButton heightInchRadio;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton widthFeetRadio;
+        private System.Windows.Forms.RadioButton widthInchRadio;
 
     }
 }

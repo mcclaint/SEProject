@@ -29,7 +29,7 @@ namespace WoodWorking
             var finalMoisture = double.Parse(finalMoistureBox.Text);
 
             if (inchRadio.Checked)
-                length = length/12.0;
+                length /= 12.0;
 
             try
             {
@@ -86,9 +86,16 @@ namespace WoodWorking
             var height = double.Parse(HeightBox.Text);
             var width = double.Parse(WidthBox.Text);
 
+            if (spanInchRadio.Checked)
+                span /= 12.0;
+            if (heightInchRadio.Checked)
+                height /= 12.0;
+            if (widthInchRadio.Checked)
+                width /= 12.0;
+
             try
             {
-                FlatResultBox.Text = Species.CalculateDeflectionForFlat(width,height,span,load).ToString("N2");
+                FlatResultBox.Text = (Species.CalculateDeflectionForFlat(width,height,span,load) * 12).ToString("N2");
             }
             catch (Exception)
             {
@@ -98,7 +105,7 @@ namespace WoodWorking
             }
             try
             {
-                EdgeResultBox.Text = Species.CalculateDeflectionForEdge(width,height,span,load).ToString("N2");
+                EdgeResultBox.Text = (Species.CalculateDeflectionForEdge(width,height,span,load) * 12).ToString("N2");
             }
             catch (Exception)
             {
