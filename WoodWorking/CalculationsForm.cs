@@ -28,10 +28,21 @@ namespace WoodWorking
             var initialMoisture = double.Parse(initialMoistureBox.Text);
             var finalMoisture = double.Parse(finalMoistureBox.Text);
 
+            if (inchRadio.Checked)
+                length = length/12.0;
+
             try
             {
                 radialChangeBox.Text =
-                    Species.CalculateRadialDimensionalChange(length, initialMoisture, finalMoisture).ToString("N2");
+                    (Species.CalculateRadialDimensionalChange(length, initialMoisture, finalMoisture) * 12.0 ).ToString("N2");
+
+                var radialChangeIsNegative = radialChangeBox.Text[0] == '-';
+
+                rChangeLabel.Text = radialChangeIsNegative ? "Radial Shrinkage ( in )" : "Radial Expansion ( in )";
+
+                if (radialChangeIsNegative)
+                    radialChangeBox.Text = radialChangeBox.Text.Remove(0, 1);
+
             }
             catch (Exception)
             {
@@ -43,7 +54,14 @@ namespace WoodWorking
             try
             {
                 tangentialChangeBox.Text =
-                    Species.CalculateTangDimensionalChange(length, initialMoisture, finalMoisture).ToString("N2"); ;
+                    (Species.CalculateTangDimensionalChange(length, initialMoisture, finalMoisture) * 12.0).ToString("N2");
+
+                var tangentialChangeIsNegative = tangentialChangeBox.Text[0] == '-';
+
+                tChangeLabel.Text = tangentialChangeIsNegative ? "Tangential Shrinkage ( in )" : "Tangential Expansion ( in )";
+
+                if (tangentialChangeIsNegative)
+                    tangentialChangeBox.Text = tangentialChangeBox.Text.Remove(0, 1);
             }
             catch (Exception)
             {

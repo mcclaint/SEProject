@@ -32,8 +32,8 @@
             this.DimensionalTab = new System.Windows.Forms.TabPage();
             this.tangentialChangeBox = new System.Windows.Forms.TextBox();
             this.radialChangeBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tChangeLabel = new System.Windows.Forms.Label();
+            this.rChangeLabel = new System.Windows.Forms.Label();
             this.lengthBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.finalMoistureBox = new System.Windows.Forms.TextBox();
@@ -63,10 +63,14 @@
             this.HeightBox = new System.Windows.Forms.TextBox();
             this.WidthBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.inchRadio = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.feetRadio = new System.Windows.Forms.RadioButton();
             this.CalculationTabs.SuspendLayout();
             this.DimensionalTab.SuspendLayout();
             this.DensityPage.SuspendLayout();
             this.DeflectionsTab.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CalculationTabs
@@ -82,10 +86,11 @@
             // 
             // DimensionalTab
             // 
+            this.DimensionalTab.Controls.Add(this.panel1);
             this.DimensionalTab.Controls.Add(this.tangentialChangeBox);
             this.DimensionalTab.Controls.Add(this.radialChangeBox);
-            this.DimensionalTab.Controls.Add(this.label5);
-            this.DimensionalTab.Controls.Add(this.label4);
+            this.DimensionalTab.Controls.Add(this.tChangeLabel);
+            this.DimensionalTab.Controls.Add(this.rChangeLabel);
             this.DimensionalTab.Controls.Add(this.lengthBox);
             this.DimensionalTab.Controls.Add(this.label3);
             this.DimensionalTab.Controls.Add(this.finalMoistureBox);
@@ -104,7 +109,7 @@
             // tangentialChangeBox
             // 
             this.tangentialChangeBox.Enabled = false;
-            this.tangentialChangeBox.Location = new System.Drawing.Point(539, 280);
+            this.tangentialChangeBox.Location = new System.Drawing.Point(671, 246);
             this.tangentialChangeBox.Name = "tangentialChangeBox";
             this.tangentialChangeBox.Size = new System.Drawing.Size(100, 26);
             this.tangentialChangeBox.TabIndex = 21;
@@ -112,32 +117,34 @@
             // radialChangeBox
             // 
             this.radialChangeBox.Enabled = false;
-            this.radialChangeBox.Location = new System.Drawing.Point(539, 174);
+            this.radialChangeBox.Location = new System.Drawing.Point(671, 168);
             this.radialChangeBox.Name = "radialChangeBox";
             this.radialChangeBox.Size = new System.Drawing.Size(100, 26);
             this.radialChangeBox.TabIndex = 20;
             // 
-            // label5
+            // tChangeLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(535, 234);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 20);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Tangential Change (ft)";
+            this.tChangeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tChangeLabel.AutoSize = true;
+            this.tChangeLabel.Location = new System.Drawing.Point(462, 249);
+            this.tChangeLabel.Name = "tChangeLabel";
+            this.tChangeLabel.Size = new System.Drawing.Size(177, 20);
+            this.tChangeLabel.TabIndex = 19;
+            this.tChangeLabel.Text = "Tangential Change ( in )";
             // 
-            // label4
+            // rChangeLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(535, 134);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 20);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Radial Change (ft)";
+            this.rChangeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rChangeLabel.AutoSize = true;
+            this.rChangeLabel.Location = new System.Drawing.Point(491, 171);
+            this.rChangeLabel.Name = "rChangeLabel";
+            this.rChangeLabel.Size = new System.Drawing.Size(148, 20);
+            this.rChangeLabel.TabIndex = 18;
+            this.rChangeLabel.Text = "Radial Change ( in )";
             // 
             // lengthBox
             // 
-            this.lengthBox.Location = new System.Drawing.Point(155, 316);
+            this.lengthBox.Location = new System.Drawing.Point(275, 277);
             this.lengthBox.Name = "lengthBox";
             this.lengthBox.Size = new System.Drawing.Size(100, 26);
             this.lengthBox.TabIndex = 17;
@@ -145,15 +152,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(155, 280);
+            this.label3.Location = new System.Drawing.Point(119, 280);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Width (ft)";
+            this.label3.Text = "Width";
             // 
             // finalMoistureBox
             // 
-            this.finalMoistureBox.Location = new System.Drawing.Point(155, 204);
+            this.finalMoistureBox.Location = new System.Drawing.Point(275, 201);
             this.finalMoistureBox.Name = "finalMoistureBox";
             this.finalMoistureBox.Size = new System.Drawing.Size(100, 26);
             this.finalMoistureBox.TabIndex = 15;
@@ -161,7 +168,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(151, 181);
+            this.label2.Location = new System.Drawing.Point(57, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(197, 20);
             this.label2.TabIndex = 14;
@@ -170,7 +177,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 85);
+            this.label1.Location = new System.Drawing.Point(57, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 20);
             this.label1.TabIndex = 13;
@@ -178,7 +185,7 @@
             // 
             // initialMoistureBox
             // 
-            this.initialMoistureBox.Location = new System.Drawing.Point(155, 108);
+            this.initialMoistureBox.Location = new System.Drawing.Point(275, 128);
             this.initialMoistureBox.Name = "initialMoistureBox";
             this.initialMoistureBox.Size = new System.Drawing.Size(100, 26);
             this.initialMoistureBox.TabIndex = 12;
@@ -412,6 +419,38 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "lbs per cubic foot";
             // 
+            // inchRadio
+            // 
+            this.inchRadio.AutoSize = true;
+            this.inchRadio.Checked = true;
+            this.inchRadio.Location = new System.Drawing.Point(17, 3);
+            this.inchRadio.Name = "inchRadio";
+            this.inchRadio.Size = new System.Drawing.Size(46, 24);
+            this.inchRadio.TabIndex = 22;
+            this.inchRadio.TabStop = true;
+            this.inchRadio.Text = "in";
+            this.inchRadio.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.feetRadio);
+            this.panel1.Controls.Add(this.inchRadio);
+            this.panel1.Location = new System.Drawing.Point(175, 262);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(79, 59);
+            this.panel1.TabIndex = 23;
+            // 
+            // feetRadio
+            // 
+            this.feetRadio.AutoSize = true;
+            this.feetRadio.Location = new System.Drawing.Point(17, 32);
+            this.feetRadio.Name = "feetRadio";
+            this.feetRadio.Size = new System.Drawing.Size(44, 24);
+            this.feetRadio.TabIndex = 23;
+            this.feetRadio.TabStop = true;
+            this.feetRadio.Text = "ft";
+            this.feetRadio.UseVisualStyleBackColor = true;
+            // 
             // CalculationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -428,6 +467,8 @@
             this.DensityPage.PerformLayout();
             this.DeflectionsTab.ResumeLayout(false);
             this.DeflectionsTab.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -438,8 +479,8 @@
         private System.Windows.Forms.TabPage DimensionalTab;
         private System.Windows.Forms.TextBox tangentialChangeBox;
         private System.Windows.Forms.TextBox radialChangeBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label tChangeLabel;
+        private System.Windows.Forms.Label rChangeLabel;
         private System.Windows.Forms.TextBox lengthBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox finalMoistureBox;
@@ -469,6 +510,9 @@
         private System.Windows.Forms.TextBox LoadBox;
         private System.Windows.Forms.Label LoadLabel;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton feetRadio;
+        private System.Windows.Forms.RadioButton inchRadio;
 
     }
 }

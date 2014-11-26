@@ -71,6 +71,7 @@
             this.Controls.Add(this.YesButton);
             this.Controls.Add(this.label1);
             this.Name = "VerifyDelete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VerifyDelete";
             this.ResumeLayout(false);
             this.PerformLayout();

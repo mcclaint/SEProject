@@ -46,6 +46,7 @@
             this.ClientSize = new System.Drawing.Size(484, 264);
             this.Controls.Add(this.label1);
             this.Name = "Error";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Error";
             this.ResumeLayout(false);
             this.PerformLayout();
