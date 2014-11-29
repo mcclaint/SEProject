@@ -196,20 +196,40 @@ namespace WoodWorking
 
             double temp;
 
-            return (
-                !string.IsNullOrEmpty(SpeciesBox.Text) &&
-                double.TryParse(textBox1.Text, out temp) &&
-                double.TryParse(textBox2.Text, out temp) &&
-                double.TryParse(textBox3.Text, out temp) &&
-                double.TryParse(textBox4.Text, out temp) &&
-                double.TryParse(textBox5.Text, out temp) &&
-                double.TryParse(RadialChangeBox.Text, out temp) &&
-                double.TryParse(TangentialChangeBox.Text, out temp) &&
-                double.TryParse(EdgeBox.Text, out temp) &&
-                double.TryParse(FlatBox.Text, out temp) &&
-                double.TryParse(SGBox.Text, out temp) &&
-                double.TryParse(ElasticityBox.Text, out temp) &&
-                locationBox.SelectedItem != null);
+            if (
+                !(!string.IsNullOrEmpty(SpeciesBox.Text) &&
+                  double.TryParse(textBox1.Text, out temp) &&
+                  double.TryParse(textBox2.Text, out temp) &&
+                  double.TryParse(textBox3.Text, out temp) &&
+                  double.TryParse(textBox4.Text, out temp) &&
+                  double.TryParse(textBox5.Text, out temp) &&
+                  double.TryParse(RadialChangeBox.Text, out temp) &&
+                  double.TryParse(TangentialChangeBox.Text, out temp) &&
+                  double.TryParse(EdgeBox.Text, out temp) &&
+                  double.TryParse(FlatBox.Text, out temp) &&
+                  double.TryParse(SGBox.Text, out temp) &&
+                  double.TryParse(ElasticityBox.Text, out temp) &&
+                  locationBox.SelectedItem != null))
+                return false;
+
+            if (textBox1.Text.Contains("-") ||
+                  textBox2.Text.Contains("-") ||
+                  textBox3.Text.Contains("-") ||
+                  textBox4.Text.Contains("-") ||
+                  textBox5.Text.Contains("-") ||
+                  RadialChangeBox.Text.Contains("-") ||
+                  TangentialChangeBox.Text.Contains("-") ||
+                  EdgeBox.Text.Contains("-") ||
+                  FlatBox.Text.Contains("-") ||
+                  SGBox.Text.Contains("-") ||
+                  ElasticityBox.Text.Contains("-"))
+            {
+                var error = new Error("Negative values are not allowed.");
+                error.ShowDialog();
+                return false;
+            }
+
+            return true;
         }
         #endregion
     }
