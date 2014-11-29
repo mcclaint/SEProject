@@ -34,11 +34,16 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.SpeciesBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -55,11 +60,6 @@
             this.EdgeBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.edgeLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ElasticityBox = new System.Windows.Forms.TextBox();
@@ -149,6 +149,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Handbook Table 3 : 3";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(369, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 20);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "%";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(370, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 20);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "%";
+            // 
             // textBox2
             // 
             this.textBox2.Enabled = false;
@@ -157,6 +175,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 26);
             this.textBox2.TabIndex = 50;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox1
             // 
@@ -166,6 +185,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 26);
             this.textBox1.TabIndex = 49;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label9
             // 
@@ -207,6 +227,33 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Handbook Table 3 : 5-6";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(366, 81);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 20);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "%";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(366, 119);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(23, 20);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "%";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(366, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 20);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "%";
+            // 
             // textBox5
             // 
             this.textBox5.Enabled = false;
@@ -215,6 +262,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(143, 26);
             this.textBox5.TabIndex = 55;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox4
             // 
@@ -224,6 +272,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(143, 26);
             this.textBox4.TabIndex = 54;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox3
             // 
@@ -233,6 +282,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(143, 26);
             this.textBox3.TabIndex = 53;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
@@ -288,6 +338,7 @@
             this.TangentialChangeBox.Name = "TangentialChangeBox";
             this.TangentialChangeBox.Size = new System.Drawing.Size(143, 26);
             this.TangentialChangeBox.TabIndex = 63;
+            this.TangentialChangeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // RadialChangeBox
             // 
@@ -297,6 +348,7 @@
             this.RadialChangeBox.Name = "RadialChangeBox";
             this.RadialChangeBox.Size = new System.Drawing.Size(143, 26);
             this.RadialChangeBox.TabIndex = 62;
+            this.RadialChangeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -340,6 +392,7 @@
             this.FlatBox.Name = "FlatBox";
             this.FlatBox.Size = new System.Drawing.Size(100, 26);
             this.FlatBox.TabIndex = 71;
+            this.FlatBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // EdgeBox
             // 
@@ -348,6 +401,7 @@
             this.EdgeBox.Name = "EdgeBox";
             this.EdgeBox.Size = new System.Drawing.Size(100, 26);
             this.EdgeBox.TabIndex = 70;
+            this.EdgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -370,51 +424,6 @@
             this.edgeLabel.Size = new System.Drawing.Size(181, 25);
             this.edgeLabel.TabIndex = 68;
             this.edgeLabel.Text = "Edge Shear Ratio";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(370, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 20);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "%";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(369, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 20);
-            this.label5.TabIndex = 52;
-            this.label5.Text = "%";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(366, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 20);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "%";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(366, 119);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(23, 20);
-            this.label14.TabIndex = 57;
-            this.label14.Text = "%";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(366, 81);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 20);
-            this.label15.TabIndex = 58;
-            this.label15.Text = "%";
             // 
             // groupBox4
             // 
@@ -448,6 +457,7 @@
             this.ElasticityBox.Name = "ElasticityBox";
             this.ElasticityBox.Size = new System.Drawing.Size(100, 26);
             this.ElasticityBox.TabIndex = 71;
+            this.ElasticityBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // elasticityLabel
             // 
@@ -466,6 +476,7 @@
             this.SGBox.Name = "SGBox";
             this.SGBox.Size = new System.Drawing.Size(100, 26);
             this.SGBox.TabIndex = 69;
+            this.SGBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // SGLabel
             // 

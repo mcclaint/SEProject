@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 
 namespace WoodWorking
@@ -38,6 +39,17 @@ namespace WoodWorking
             {
                 Species = null;
                 SpeciesBox.Text = "New Species";
+                textBox1.Text = "0";
+                textBox2.Text = "0";
+                textBox3.Text = "0";
+                textBox4.Text = "0";
+                textBox5.Text = "0";
+                RadialChangeBox.Text = "0";
+                TangentialChangeBox.Text = "0";
+                SGBox.Text = "0";
+                ElasticityBox.Text = "0";
+                EdgeBox.Text = "0";
+                FlatBox.Text = "0";
                 EnableEdits();
             }
         }
@@ -142,6 +154,9 @@ namespace WoodWorking
 
         private static void AddSpeciesToData(Species species)
         {
+            if (species == null)
+                return;
+
             EWood.Data.SpeciesList.Add(species);
             EWood.Data.SpeciesList = EWood.Data.SpeciesList.OrderBy(s => s.Name).ToList();
             EWood.Data.WriteSpecies();
